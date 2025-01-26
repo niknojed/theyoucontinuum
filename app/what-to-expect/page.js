@@ -16,7 +16,7 @@ export default function WhatToExpect() {
           What to Expect
         </h1>
         <p className="text-white text-base font-light mb-10">
-        The LDPN Scoring tool will guide you through five values-related questions.  The amount of time it takes to complete, from X to X minutes, is different for everyone.  Selecting a values does not mean you are perfectly living up to that value or even prioritizing it.  It just means that in an ideal world, with ample time and energy, these values are the most important to you.  We are always evolving, shifting priorities, and improving our lives, and The YOU Continuum reflects that.
+        The Self-Care Compass will guide you through five values-related questions.  The amount of time it takes to complete, from X to X minutes, is different for everyone.  Selecting a values does not mean you are perfectly living up to that value or even prioritizing it.  It just means that in an ideal world, with ample time and energy, these values are the most important to you.  We are always evolving, shifting priorities, and improving our lives, and The YOU Continuum reflects that.
         </p>
         
         <div className="text-white mb-10">

@@ -8,11 +8,11 @@ export default function SummaryResultsPage() {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   const impactZones = [
-    { name: "Healthy Zone", range: [1, 25], description: "All systems functioning well, requiring only basic maintenance and occasional reflection." },
-    { name: "Caution Zone", range: [26, 50], description: "Early signs of strain or slight imbalance, which may require monitoring and minor adjustments." },
-    { name: "Action Zone", range: [51, 75], description: "Noticeable negative effects present, creating an imbalance that needs attention to avoid a decline in well-being." },
-    { name: "Urgent Zone", range: [76, 100], description: "Major areas of neglect significantly impacting your well-being, requiring immediate steps for correction." },
-    { name: "Crisis Zone", range: [101, Infinity], description: "Well-being is critically compromised; intervention and deliberate action is non-negotiable." },
+    { name: "Healthy Zone", range: [1, 25], description: "All systems functioning well, requiring only basic maintenance and occasional reflection.", explanation: "You are thriving. Focus on reinforcing routines that support your health and well-being. Continue to honor your values and monitor those routines, remaining flexible when new needs arise." },
+    { name: "Caution Zone", range: [26, 50], description: "Early signs of strain or slight imbalance, which may require monitoring and minor adjustments.", explanation: "This zone suggests emerging concerns in your self-care routine. This is an opportunity to preemptively address areas of stress and/or reflect on what might feel atypical. Check to see if certain habits, such as screen time, nutrition, sleep, or personal time need small adjustments to prevent future strain." },
+    { name: "Action Zone", range: [51, 75], description: "Noticeable negative effects present, creating an imbalance that needs attention to avoid a decline in well-being.", explanation: "Take intentional action to recalibrate and prioritize yourself. Focus on addressing neglected life domains, such as building stronger relationships, managing financial stress, seeking social support, exercising, and/or reorganizing commitments." },
+    { name: "Urgent Zone", range: [76, 100], description: "Major areas of neglect significantly impacting your well-being, requiring immediate steps for correction.", explanation: "This indicates you are nearing burnout or major stress and need to address self-care deficits. Pause and reassess to redirect energy to prioritize self-care, perhaps by taking time away from stressors, consulting a professional, taking a break, or reprioritizing life domains to regain control." },
+    { name: "Crisis Zone", range: [101, Infinity], description: "Well-being is critically compromised; intervention and deliberate action is non-negotiable.", explanation: "This is a wake-up call for transformative action, and it is likely you are experiencing burn-out and causing harm to multiple life domains. Seek professional or external supports to restore balance and health. Act urgently by reassessing priorities and implementing robust self-care interventions. A full reassessment of priorities and lifestyle choices is critical to recovery." },
   ];
 
   useEffect(() => {
@@ -55,6 +55,7 @@ export default function SummaryResultsPage() {
           priorityNumber: isNaN(priorityNumber) ? 0 : priorityNumber,
           impactZone: zone?.name || "Unknown Zone",
           zoneDescription: zone?.description || "No description available.",
+          zoneExplanation: zone?.explanation || "No explanation available.",
         };
       });
     };
@@ -110,6 +111,7 @@ export default function SummaryResultsPage() {
               <strong>Impact Zone:</strong> {result.impactZone}
             </p>
             <p className="text-gray-600">{result.zoneDescription}</p>
+            <p className="text-gray-600">{result.zoneExplanation}</p>
           </div>
         ))}
       </div>
