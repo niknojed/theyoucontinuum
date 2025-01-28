@@ -1,5 +1,6 @@
 import React from "react";
 import "./globals.css"; // Import global styles
+import Link from "next/link";
 import Image from 'next/image';
 import YClogo from '../public/YC-logo.svg';
 
@@ -20,24 +21,24 @@ export default function Layout({ children }) {
               >
                 Home
               </a>
-              <a
-                href="/"
+              <Link
+                href="/philosophy"
                 className="text-white hover:underline text-sm ml-9"
               >
                 Philosophy
-              </a>
-              <a
-                href="/"
+              </Link>
+              <Link
+                href="/self-care-compass"
                 className="text-white hover:underline text-sm ml-9"
               >
-                LDPN Tool
-              </a>
-              <a
-                href="/"
+                Self-Care Compass
+              </Link>
+              <Link
+                href="/about-the-creator"
                 className="text-white hover:underline text-sm ml-9"
               >
                 About the Creator
-              </a>
+              </Link>
               <a
                 href="/"
                 className="text-white hover:underline text-sm ml-9"
