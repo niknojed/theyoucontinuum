@@ -2,19 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove global background styles since backgrounds are now applied per page */
 :root {
-  --background: radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%);
   --foreground: #171717;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%);
     --foreground: #ededed;
   }
 }
 
+/* Keep global styles for text color */
 body {
   color: var(--foreground);
-  background: var(--background);
+}
+
+/* Utility class for adding overlay effect to backgrounds */
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Additional styles for buttons and components if needed */
+/* Change Swiper navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #9abba7 !important; /* Evergreen-400 */
+}
+
+/* Change Swiper pagination dots */
+.swiper-pagination-bullet {
+  background-color: #9abba7 !important; /* Evergreen-400 */
+}
+
+/* Active pagination dot */
+.swiper-pagination-bullet-active {
+  background-color: #4e7b63 !important; /* Evergreen-600 for emphasis */
 }

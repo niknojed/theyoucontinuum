@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        andika: "var(--font-andika)", // Andika Font
+        ptSans: "var(--font-pt-sans)", // PT Sans Font
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -80,45 +84,53 @@ export default {
         sm: ['16px', {
           lineHeight: '24px',
           fontWeight: '400',
+          fontFamily: "var(--font-pt-sans)",
         }],
         base: ['19px', {
           lineHeight: '28.5px',
           fontWeight: '400',
+          fontFamily: "var(--font-pt-sans)",
         }],
         lg: ['28px',  {
           lineHeight: '42px',
           fontWeight: '400',
+          fontFamily: "var(--font-pt-sans)",
         }],
         
         /* H5 */
         xl: ['23px',  {
-          lineHeight: '65px',
+          lineHeight: '32px',
           fontWeight: '400',
           letterSpacing: '-0.23px',
+          fontFamily: "var(--font-andika)",
         }], 
         /* H4 */
         '2xl': ['34px',  {
           lineHeight: '44px',
           fontWeight: '400',
           letterSpacing: '-0.34px',
+          fontFamily: "var(--font-andika)",
         }], 
         /* H3 */
         '3xl': ['41px',  {
           lineHeight: '45px',
           fontWeight: '400',
           letterSpacing: '-0.41px',
+          fontFamily: "var(--font-andika)",
         }], 
         /* H2 */
         '4xl': ['49px',  {
           lineHeight: '54px',
           fontWeight: '400',
           letterSpacing: '-0.49px',
+          fontFamily: "var(--font-andika)",
         }], 
         /* H1 */
         '5xl': ['59px',  {
           lineHeight: '65px',
           fontWeight: '700',
           letterSpacing: '-0.59px',
+          fontFamily: "var(--font-andika)",
         }], 
       },
     },

@@ -4,12 +4,12 @@ import React from "react";
 
 export default function ValueChips({ values, selectedValues, onSelect }) {
   return (
-    <div className="flex flex-wrap gap-x-5 gap-y-5">
+    <div className="flex flex-wrap gap-x-4 gap-y-4">
       {values.map((value) => (
         <button
           key={value}
           onClick={() => onSelect(value)}
-          className={`px-4 py-2 rounded-full text-sm font-medium ${
+          className={`px-4 py-2 rounded-full text-[14px] font-medium ${
             selectedValues.includes(value)
               ? "border-solid border-stone-200 bg-stone-500 border-4 text-evergreen-50"
               : "border-solid border-stone-200 border-2 text-evergreen-50 hover:bg-stone-600"
