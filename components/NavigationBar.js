@@ -28,7 +28,7 @@ export default function Navbar() {
             { name: "Home", href: "/" },
             { name: "Philosophy", href: "/philosophy" },
             { name: "Self-Care Compass", href: "/self-care-compass" },
-            { name: "About the Creator", href: "/about" },
+            { name: "About the Creator", href: "/about-the-creator" },
           ].map((link) => (
             <Link
               key={link.href}

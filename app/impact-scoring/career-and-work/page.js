@@ -32,12 +32,16 @@ export default function CareerAndAmbitionsScoring() {
   };
 
   return (
+    <section 
+      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] pb-0"
+      style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
+    >
     <div className="w-full">
-      <div className="max-w-7xl px-4 mx-auto pt-8">
-        <span className="mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
+      <div className="max-w-4xl px-4 mx-auto pt-8">
+        <span className="font-ptSans mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
-        <h1 className="text-2xl text-evergreen-200 mb-6">Career & Ambitions</h1>
+        <h1 className="font-andika text-xl md:text-2xl text-white mb4">Career & Ambitions</h1>
 
         {/* Impact Slider */}
         <div className="pb-6 mb-6 max-w-2xl">
@@ -90,5 +94,6 @@ export default function CareerAndAmbitionsScoring() {
         </button>
       </div>
     </div>
+    </section>
   );
 }
