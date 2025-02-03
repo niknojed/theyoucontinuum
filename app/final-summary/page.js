@@ -1,61 +1,57 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
+// Life Domain Icons
+const domainIcons = {
+  "Health & Wellness": "🧘‍♂️",
+  "Spirituality & Beliefs": "🛐",
+  "Career & Ambition": "💼",
+  "Personal Growth & Education": "📚",
+  "Finances": "💰",
+  "Recreation & Leisure": "🎾",
+  "Community & Contribution": "🤝",
+  "Family & Relationships": "👨‍👩‍👧",
+  "Environment & Home": "🏡",
+};
 
 export default function SummaryResultsPage() {
   const [priorityResults, setPriorityResults] = useState([]);
   const [email, setEmail] = useState("");
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState(null);
+  const router = useRouter();
 
   const impactZones = [
-    { name: "Healthy Zone", range: [1, 25], description: "All systems functioning well, requiring only basic maintenance and occasional reflection.", explanation: "You are thriving. Focus on reinforcing routines that support your health and well-being. Continue to honor your values and monitor those routines, remaining flexible when new needs arise." },
-    { name: "Caution Zone", range: [26, 50], description: "Early signs of strain or slight imbalance, which may require monitoring and minor adjustments.", explanation: "This zone suggests emerging concerns in your self-care routine. This is an opportunity to preemptively address areas of stress and/or reflect on what might feel atypical. Check to see if certain habits, such as screen time, nutrition, sleep, or personal time need small adjustments to prevent future strain." },
-    { name: "Action Zone", range: [51, 75], description: "Noticeable negative effects present, creating an imbalance that needs attention to avoid a decline in well-being.", explanation: "Take intentional action to recalibrate and prioritize yourself. Focus on addressing neglected life domains, such as building stronger relationships, managing financial stress, seeking social support, exercising, and/or reorganizing commitments." },
-    { name: "Urgent Zone", range: [76, 100], description: "Major areas of neglect significantly impacting your well-being, requiring immediate steps for correction.", explanation: "This indicates you are nearing burnout or major stress and need to address self-care deficits. Pause and reassess to redirect energy to prioritize self-care, perhaps by taking time away from stressors, consulting a professional, taking a break, or reprioritizing life domains to regain control." },
-    { name: "Crisis Zone", range: [101, Infinity], description: "Well-being is critically compromised; intervention and deliberate action is non-negotiable.", explanation: "This is a wake-up call for transformative action, and it is likely you are experiencing burn-out and causing harm to multiple life domains. Seek professional or external supports to restore balance and health. Act urgently by reassessing priorities and implementing robust self-care interventions. A full reassessment of priorities and lifestyle choices is critical to recovery." },
+    { name: "Healthy Zone", range: [1, 25], description: "You're in a balanced place. Keep reinforcing positive habits to maintain stability." },
+    { name: "Caution Zone", range: [26, 50], description: "Some areas may need attention soon to prevent future strain." },
+    { name: "Action Zone", range: [51, 75], description: "An imbalance is present. Adjustments are needed to realign with your well-being." },
+    { name: "Urgent Zone", range: [76, 100], description: "There are significant stressors. Consider taking immediate steps to support yourself." },
+    { name: "Crisis Zone", range: [101, Infinity], description: "Your well-being is at risk. It's important to seek support and prioritize care." },
   ];
 
   useEffect(() => {
-    // Fetch rankings and impact scores from localStorage
     const rankings = JSON.parse(localStorage.getItem("rankings")) || [];
-    console.log("Rankings from LocalStorage:", rankings);
-
     const impactScores = JSON.parse(localStorage.getItem("impactScores")) || {};
-    console.log("Impact Scores from LocalStorage:", impactScores);
 
     const calculatePriorityNumbers = () => {
       return rankings.map((ranking) => {
         const { domain: name, percentage } = ranking;
-
-        // Ensure percentage is valid
         const domainValue = percentage ? Math.ceil((percentage / 100) * 5) : 1;
-
-        // Fetch Negative Impact and Detection Level (default values if undefined)
         const impactScore = impactScores[name]?.impactScore || 1;
         const detectionScore = impactScores[name]?.detectionScore || 1;
-
-        // Calculate Priority Number
         const priorityNumber = domainValue * impactScore * detectionScore;
 
-        // Log values for debugging
-        console.log(`Domain: ${name}`);
-        console.log(`Percentage: ${percentage}%`);
-        console.log(`Domain Value: ${domainValue}`);
-        console.log(`Negative Impact: ${impactScore}`);
-        console.log(`Detection Level: ${detectionScore}`);
-        console.log(`Priority Number: ${priorityNumber}`);
-
-        // Determine Impact Zone
         const zone = impactZones.find((z) => priorityNumber >= z.range[0] && priorityNumber <= z.range[1]);
 
         return {
           name,
-          percentage: percentage || 0,
-          domainValue,
+          icon: domainIcons[name] || "❓",
           priorityNumber: isNaN(priorityNumber) ? 0 : priorityNumber,
+          percentage: percentage || 0,
           impactZone: zone?.name || "Unknown Zone",
           zoneDescription: zone?.description || "No description available.",
-          zoneExplanation: zone?.explanation || "No explanation available.",
         };
       });
     };
@@ -71,58 +67,107 @@ export default function SummaryResultsPage() {
       console.error("Email is required but missing.");
       return;
     }
-  
-    const dataToSend = {
-      email,
-      results: priorityResults,
-    };
-  
+
+    const dataToSend = { email, results: priorityResults };
+
     try {
       const response = await fetch("/api/send-results", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSend),
       });
-  
+
       if (!response.ok) {
-        // Log response status and error
         const errorMessage = await response.text();
         throw new Error(`Failed to send email: ${response.status} - ${errorMessage}`);
       }
-  
+
       console.log("Email sent successfully!");
       setEmailSubmitted(true);
+
+      // Mock PDF URL (Replace with actual PDF generation)
+      setPdfUrl("/mock-results.pdf");
     } catch (error) {
       console.error("Failed to send email:", error);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Summary Results</h1>
+    <div className="bg-evergreen-50 pt-[140px] max-w-7xl px-[24px] mx-auto p-6 flex flex-col items-center">
+      <h1 className="text-2xl font-bold text-gray-800 mb-4">Your Self-Care Focus Areas</h1>
+      <p className="text-md text-gray-700 text-center max-w-xl mb-8">
+        These are the key areas that need your attention right now. Reflect on what they mean for you.
+      </p>
 
-      <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mb-6">
+      {/* Grid Layout for Top 3 Domains */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
         {priorityResults.map((result, index) => (
-          <div key={index} className="mb-6">
-            <h2 className="text-lg font-semibold text-teal-600">{index + 1}. {result.name}</h2>
-            <p className="text-gray-700">Percentage: {result.percentage}%</p>
-            <p className="text-gray-700">Priority Number: {result.priorityNumber}</p>
-            <p className="text-gray-700">
-              <strong>Impact Zone:</strong> {result.impactZone}
+          <div 
+            key={index}
+            className={`p-6 rounded-lg shadow-lg text-center border ${
+              index === 0 ? "border-teal-600 bg-teal-50" : 
+              index === 1 ? "border-blue-500 bg-blue-50" : 
+              "border-amber-500 bg-amber-50"
+            }`}
+          >
+            {/* Domain Icon */}
+            <div className="text-4xl">{result.icon}</div>
+
+            {/* Domain Name */}
+            <h2 className="text-xl font-semibold text-gray-900 mt-2">{result.name}</h2>
+
+            {/* Priority Score (Leading Metric) */}
+            <p className="mt-2 text-lg font-bold text-gray-800">
+              Priority Score: {result.priorityNumber}
             </p>
-            <p className="text-gray-600">{result.zoneDescription}</p>
-            <p className="text-gray-600">{result.zoneExplanation}</p>
+
+            {/* Secondary Metric - Percentage */}
+            <p className="mt-1 text-md text-gray-700">
+              {result.percentage}% of selected values
+            </p>
+
+            {/* Impact Zone */}
+            <p className="mt-4 text-md font-bold text-gray-900">{result.impactZone}</p>
+            <p className="text-sm text-gray-600">{result.zoneDescription}</p>
+
+            {/* Actionable Tip */}
+            <p className="mt-4 text-xs text-gray-700 italic">
+              ⭐ Small Step: <span className="font-medium">Take 10 minutes today</span> to reflect on how this domain is affecting your well-being.
+            </p>
+
+            {/* Expandable Extra Details Section */}
+            <details className="mt-4">
+              <summary className="cursor-pointer text-teal-600 hover:underline text-sm font-semibold">
+                Learn more about {result.name}
+              </summary>
+              <p className="mt-2 text-sm text-gray-700">
+                {/* 📝 Replace this with your detailed content */}
+                This is where you will add the extra details for this domain.
+              </p>
+            </details>
           </div>
         ))}
       </div>
 
-      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+      {/* Email Submission & PDF Download Section */}
+      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 mt-8">
         <h3 className="text-lg font-semibold text-gray-800 mb-4">Get Your Full Results</h3>
         <p className="text-gray-700 mb-4">
           Enter your email address to receive a detailed report with all priority information.
         </p>
         {emailSubmitted ? (
-          <p className="text-green-600">Thank you! Your results have been sent to {email}.</p>
+          <>
+            <p className="text-green-600">Thank you! Your results have been sent to {email}.</p>
+            {pdfUrl && (
+              <a 
+                href={pdfUrl} 
+                download 
+                className="mt-4 block text-center bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition"
+              >
+                Download Your PDF
+              </a>
+            )}
+          </>
         ) : (
           <>
             <input
