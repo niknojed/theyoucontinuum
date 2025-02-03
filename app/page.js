@@ -71,7 +71,7 @@ export default function HomePage() {
         {/* Scroll Down Arrow */}
         <button 
           onClick={scrollToNextSection} 
-          className="hidden md:flex absolute bottom-32 animate-bounce items-center justify-center w-12 h-12 border-2 rounded-full shadow-md transition z-10"
+          className="hidden md:flex absolute bottom-24 items-center justify-center w-12 h-12 border-2 rounded-full shadow-md transition z-10"
         >
           <ChevronDown size={28} className="text-white" />
         </button>

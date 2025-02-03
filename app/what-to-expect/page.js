@@ -11,13 +11,13 @@ export default function WhatToExpect() {
 
   return (
     <section 
-      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] pb-0"
+      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] md:pt-[40px] pb-0"
       style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
     >
       <div className="max-w-4xl w-full p-8 md:p-12 mt-16">
         
         {/* Header */}
-        <h1 className="font-andika text-xl md:text-2xl font-bold text-white">
+        <h1 className="font-andika text-xl md:text-2xl font-bold text-evergreen-200">
           What to Expect
         </h1>
         

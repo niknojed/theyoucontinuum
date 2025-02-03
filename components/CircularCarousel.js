@@ -26,11 +26,11 @@ const lifeDomains = [
 const domainDetails = {
   1: {
     description: "Your physical and mental health lay the groundwork for your overall well-being.",
-    image: "/images/health-wellness.jpg",
+    image: "/tech-and-health.png",
     content: [
-      "Taking care of your body and mind ensures you feel energized, resilient, and able to take on life’s challenges.",
-      "This domain covers fitness, nutrition, sleep, and self-care practices. Regular exercise, proper rest, and mindfulness can create a foundation for long-term wellness.",
-      "When health is prioritized, other aspects of life—career, relationships, and ambitions—become more sustainable and fulfilling.",
+      "2024's State of America's Oral Health and Wellness Report found that 1 in 5 adults have become anxious, lost sleep, or felt embarrassed about their appearance due to oral health issues.",
+      "Baylor EDU's study on the impact of physical activity on mental health found that 30 minutes of exercise can significantly reduce symptoms of depression.",
+      "Another study by the University of Michigan found that 1 in 5 Americans experience mental health issues, with 1 in 20 experiencing severe mental health issues.",
     ],
   },
   2: {
@@ -59,6 +59,7 @@ export default function CircularCarousel() {
   const [selectedDomain, setSelectedDomain] = useState(lifeDomains[0]);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const sheetRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -78,15 +79,21 @@ export default function CircularCarousel() {
   }, []);
 
   const openSheet = () => {
-    setIsSheetOpen(true); // Ensure the state updates immediately
+    setIsSheetOpen(true);
   
     setTimeout(() => {
       gsap.to(sheetRef.current, { y: "0%", duration: 0.5, ease: "power3.out" });
-    }, 0); // Delay animation until the next render
+      gsap.to(overlayRef.current, { opacity: 1, duration: 0.3, ease: "power2.out" });
+    }, 0);
   };
-
+  
   const closeSheet = () => {
-    gsap.to(sheetRef.current, { y: "100%", duration: 0.4, ease: "power3.in", onComplete: () => setIsSheetOpen(false) });
+    gsap.to(sheetRef.current, { y: "100%", duration: 0.5, ease: "power3.in" });
+    gsap.to(overlayRef.current, { opacity: 0, duration: 0.3, ease: "power2.in" });
+  
+    setTimeout(() => {
+      setIsSheetOpen(false);
+    }, 500);
   };
 
   return (
@@ -99,7 +106,7 @@ export default function CircularCarousel() {
       </p>
 
       {/* DESKTOP: Circular Carousel */}
-      <div className="hidden md:flex relative items-center justify-center w-[600px] h-[600px] mt-8">
+      <div className="hidden md:flex relative items-center justify-center w-[600px] h-[600px] mt-16">
         {/* Background Circle */}
         <div 
             className="absolute w-full h-full rounded-full" 
@@ -183,9 +190,16 @@ export default function CircularCarousel() {
 
       {/* Bottom Sheet (Overlay Panel) */}
       {isSheetOpen && (
+        <>
+        {/* Background Overlay */}
+        <div
+          ref={overlayRef}
+          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+          onClick={closeSheet} // Clicking outside closes the sheet
+        ></div>
         <div 
           ref={sheetRef}
-          className="fixed bottom-0 left-0 w-full h-[calc(100%-16px)] bg-white shadow-lg rounded-t-2xl p-6 z-50 transform translate-y-full"
+          className="fixed bottom-0 left-0 w-full h-[calc(100%-148px)] bg-white shadow-lg rounded-t-2xl p-6 z-50 transform translate-y-full"
         >
           {/* Close Button */}
           <button 
@@ -195,15 +209,16 @@ export default function CircularCarousel() {
             <X size={28} />
           </button>
 
-          <div className="mt-8">
+          <div className="mt-12 max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-900 text-center">{selectedDomain.label}</h2>
-            <img src={domainDetails[selectedDomain.id]?.image} alt={selectedDomain.label} className="w-full max-h-60 object-cover mt-4 rounded-lg shadow-md" />
+            <img src={domainDetails[selectedDomain.id]?.image} alt={selectedDomain.label} className="w-40 mt-4 mx-auto" />
             {domainDetails[selectedDomain.id]?.content.map((para, index) => (
               <p key={index} className="text-gray-700 mt-4 text-center">{para}</p>
             ))}
           </div>
 
         </div>
+      </>
       )}
     </section>
   );
