@@ -97,7 +97,7 @@ export default function CircularCarousel() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full bg-white px-6 md:px-12">
+    <section className="relative flex flex-col items-center justify-center w-full px-6 md:px-12">
       <h2 className="font-andika text-xl md:text-2xl font-bold md:font-bold text-stone-950 mb-4">
         Discover the Nine Life Domains
       </h2>

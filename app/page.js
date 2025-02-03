@@ -37,33 +37,48 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl px-6 gap-8 mt-40 md:ml-8 md:mr-8">
           
           {/* Content Card */}
-          <div className="w-full bg-white px-[24px] md:px-[80px] py-[54px] rounded-[32px] shadow-lg">
-            <h1 className="font-andika text-2xl font-bold text-evergreen-950 leading-tight">
-              Aligning Self-Care with Your Evolving Values 
-            </h1>
-            <p className="font-ptSans text-evergreen-950 mt-4">
-              With so many strategies and resources available to improve different areas of life, or life domains—like health, relationships, career, and more—it can be hard to know where to start. Often, people feel stuck because they aren’t sure which area carries the highest risk to their well-being or which is most important to focus on right now.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-6 flex flex-row gap-2">
+          <div className="w-full bg-white px-[24px] md:px-[64px] py-[54px] rounded-[32px] shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-8">
               
-              <button onClick={handleStart} className="font-ptSans flex items-center px-6 py-2 border-2 border-evergreen-500 bg-evergreen-500 text-white font-medium rounded-full shadow-md hover:border-evergreen-800 hover:bg-evergreen-800">
-                  <span className="pr-2">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H20M12 22C6.47715 22 2 17.5228 2 12M12 22V20M2 12C2 6.47715 6.47715 2 12 2M2 12H4M12 2V4M19.0711 19.0711L17.6569 17.6569M6.34315 6.34315L4.92893 4.92893M17.6569 6.34315L19.0711 4.92893M4.92893 19.0711L6.34315 17.6569M8 12L10.5 10.5L12 8L13.5 10.5L16 12L13.5 13.5L12 16L10.5 13.5L8 12Z" 
-                      stroke="#F2F7F4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg> 
-                  </span>
-                  <span className="block md:hidden">Get Started</span> 
-                  <span className="hidden md:block">Get started with the Self-Care Compass</span>
-                </button>
+              {/* Left Column - Text Content */}
+              <div className="max-w-7xl col-span-3">
+                <h1 className="font-andika text-2xl font-bold text-evergreen-950 leading-tight">
+                  Aligning Self-Care with Your Evolving Values 
+                </h1>
+                <p className="font-ptSans text-evergreen-950 mt-4">
+                  With so many strategies and resources available to improve different areas of life, or life domains—like health, relationships, career, and more—it can be hard to know where to start. Often, people feel stuck because they aren’t sure which area carries the highest risk to their well-being or which is most important to focus on right now.
+                </p>
 
-              <Link href="/self-care-compass">
-                <button className="font-ptSans px-6 py-2 border-2 border-sand-500 text-sand-700 font-medium rounded-full hover:bg-sand-100">
-                  Learn more
-                </button>
-              </Link>
+                {/* Buttons */}
+                <div className="mt-6 flex flex-row gap-4">
+                  <button 
+                    onClick={handleStart} 
+                    className="font-ptSans flex items-center px-6 py-3 border-2 border-evergreen-500 bg-evergreen-500 text-white font-medium rounded-full shadow-md hover:border-evergreen-800 hover:bg-evergreen-800"
+                  >
+                    <span className="pr-2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H20M12 22C6.47715 22 2 17.5228 2 12M12 22V20M2 12C2 6.47715 6.47715 2 12 2M2 12H4M12 2V4M19.0711 19.0711L17.6569 17.6569M6.34315 6.34315L4.92893 4.92893M17.6569 6.34315L19.0711 4.92893M4.92893 19.0711L6.34315 17.6569M8 12L10.5 10.5L12 8L13.5 10.5L16 12L13.5 13.5L12 16L10.5 13.5L8 12Z" 
+                          stroke="#F2F7F4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg> 
+                    </span>
+                    <span className="block md:hidden">Get Started</span> 
+                    <span className="hidden md:block">Get started with the Self-Care Compass</span>
+                  </button>
+
+                  {/*<button onClick={scrollToNextSection}  className="font-ptSans px-6 py-3 border-2 border-sand-500 text-sand-700 font-medium rounded-full hover:bg-sand-100">
+                      Learn more
+                    </button>*/}
+                </div>
+              </div>
+
+              {/* Right Column - Image */}
+              <div className="hidden md:block flex col-span-1 justify-end">
+                <img 
+                  src="/alignment.svg" 
+                  alt="Illustration of a person aligning values" 
+                  className="w-full max-w-[220px] md:max-w-[220px] object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -71,7 +86,7 @@ export default function HomePage() {
         {/* Scroll Down Arrow */}
         <button 
           onClick={scrollToNextSection} 
-          className="hidden md:flex absolute bottom-24 items-center justify-center w-12 h-12 border-2 rounded-full shadow-md transition z-10"
+          className="hidden md:flex absolute bottom-20 items-center justify-center w-12 h-12 border-2 rounded-full shadow-md transition z-10"
         >
           <ChevronDown size={28} className="text-white" />
         </button>
@@ -79,10 +94,19 @@ export default function HomePage() {
       </section>
 
       {/* New Section: Understanding The YOU Continuum */}
-      <section ref={nextSectionRef} className="relative bg-evergreen-800 py-20 md:pt-40 px-6 md:px-12">
+      <section ref={nextSectionRef} className="relative bg-evergreen-800 py-32 md:pt-40 px-6 md:px-12">
         <div className="max-w-7xl px-[24px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          {/* Left Content */}
+          {/* Left Image */}
+          <div className="w-full">
+            <img 
+              src="/plant.png" 
+              alt="Small plant growing in soil" 
+              className="w-full rounded-[32px] shadow-lg"
+            />
+          </div>
+
+          {/* Right Content */}
           <div>
             <h2 className="font-andika text-xl md:text-2xl font-bold md:font-normal text-white">
               Understanding The YOU Continuum
@@ -107,19 +131,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="w-full">
-            <img 
-              src="/plant.png" 
-              alt="Small plant growing in soil" 
-              className="w-full rounded-2xl shadow-lg"
-            />
-          </div>
         </div>
       </section>
 
       {/* Circular Carousel Section */}
-      <section className="bg-white py-24 px-6 md:px-12 flex justify-center">
+      <section className="bg-evergreen-50 py-24 px-6 md:px-12 flex justify-center">
         <div className="max-w-7xl w-full">
           <CircularCarousel />
         </div>
@@ -134,16 +150,16 @@ export default function HomePage() {
             <img 
               src="/compass-image.png" 
               alt="Compass representing direction" 
-              className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
+              className="w-full max-w-md md:max-w-md rounded-2xl shadow-lg"
             />
           </div>
 
           {/* Right: Text Content */}
           <div>
             <h2 className="font-andika text-xl md:text-2xl font-bold text-white">
-              Start your journey
+              Begin your journey
             </h2>
-            <p className="font-ptSans pt-4 pb-6 leading-relaxed text-stone-300">
+            <p className="font-ptSans pt-4 pb-6 leading-relaxed text-stone-50">
               Which of these domains resonates with you right now? Your path to a balanced, fulfilling life starts by exploring 
               the domains that matter most to you. Dive deeper into your core values to understand which life domain could benefit 
               most from your focus and take the first step toward positive change.
