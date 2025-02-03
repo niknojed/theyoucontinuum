@@ -64,7 +64,7 @@ export default function CircularCarousel() {
     if (!containerRef.current) return;
 
     const items = containerRef.current.children;
-    const radius = 350;
+    const radius = 306;
     const angleStep = (2 * Math.PI) / lifeDomains.length;
 
     Array.from(items).forEach((item, i) => {
@@ -99,7 +99,7 @@ export default function CircularCarousel() {
       </p>
 
       {/* DESKTOP: Circular Carousel */}
-      <div className="hidden md:flex relative items-center justify-center w-[700px] h-[700px] mt-8">
+      <div className="hidden md:flex relative items-center justify-center w-[600px] h-[600px] mt-8">
         {/* Background Circle */}
         <div 
             className="absolute w-full h-full rounded-full" 
