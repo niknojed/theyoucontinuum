@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react"; 
 
@@ -10,6 +11,12 @@ export default function PhilosophyPage() {
 
   const scrollToNextSection = () => {
     nextSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/what-to-expect");
   };
 
   return (
@@ -22,7 +29,8 @@ export default function PhilosophyPage() {
         {/* Background Image - Absolute to Fill Entire Section */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "linear-gradient(180deg, rgba(242, 247, 244, 0.25) 47.96%, #69323F 95.25%), url('/bg-philosophy.png')" }}>
+          style={{ backgroundImage: "linear-gradient(177deg, rgba(167, 119, 76, 0.55) 2.49%, #69323F 93.21%), url('/bg-philosophy-2.png')"
+ }}>
         </div>
 
         {/* Content Container - Stays in Front */}
@@ -44,8 +52,7 @@ export default function PhilosophyPage() {
 
             {/* Buttons */}
             <div className="mt-6 flex flex-row gap-2">
-              <Link href="/self-care-compass">
-                <button className="font-ptSans flex items-center px-6 py-3 border-2 border-rose-500 bg-rose-500 text-white font-medium rounded-full shadow-md hover:border-rose-800 hover:bg-rose-800">
+                <button onClick={handleStart} className="font-ptSans flex items-center px-6 py-3 border-2 border-rose-700 bg-rose-700 text-white font-medium rounded-full shadow-md hover:border-rose-900 hover:bg-rose-900">
                   <span className="pr-2">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H20M12 22C6.47715 22 2 17.5228 2 12M12 22V20M2 12C2 6.47715 6.47715 2 12 2M2 12H4M12 2V4M19.0711 19.0711L17.6569 17.6569M6.34315 6.34315L4.92893 4.92893M17.6569 6.34315L19.0711 4.92893M4.92893 19.0711L6.34315 17.6569M8 12L10.5 10.5L12 8L13.5 10.5L16 12L13.5 13.5L12 16L10.5 13.5L8 12Z" 
@@ -55,10 +62,9 @@ export default function PhilosophyPage() {
                   <span className="block md:hidden">Get Started</span> 
                   <span className="hidden md:block">Get started with the Self-Care Compass</span>
                 </button>
-              </Link>
 
-              <Link href="/learn-more">
-                <button className="font-ptSans px-6 py-3 border-2 border-evergreen-500 text-evergreen-700 font-medium rounded-full hover:bg-evergreen-100">
+              <Link href="/self-care-compass">
+                <button className="font-ptSans px-6 py-3 border-2 border-sand-500 text-sand-700 font-medium rounded-full hover:bg-sand-100">
                   Learn more
                 </button>
               </Link>
@@ -234,7 +240,7 @@ export default function PhilosophyPage() {
 
             {/* CTA Button */}
             <Link href="/self-care-compass">
-              <button className="font-ptSans flex items-center px-6 py-3 border-2 border-rose-500 bg-rose-500 text-white font-medium rounded-full shadow-md hover:border-rose-800 hover:bg-rose-800">
+              <button className="font-ptSans flex items-center px-6 py-3 border-2 border-rose-700 bg-rose-700 text-white font-medium rounded-full shadow-md hover:border-rose-800 hover:bg-rose-800">
                   <span className="pr-2">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H20M12 22C6.47715 22 2 17.5228 2 12M12 22V20M2 12C2 6.47715 6.47715 2 12 2M2 12H4M12 2V4M19.0711 19.0711L17.6569 17.6569M6.34315 6.34315L4.92893 4.92893M17.6569 6.34315L19.0711 4.92893M4.92893 19.0711L6.34315 17.6569M8 12L10.5 10.5L12 8L13.5 10.5L16 12L13.5 13.5L12 16L10.5 13.5L8 12Z" 

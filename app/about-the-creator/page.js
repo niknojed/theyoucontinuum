@@ -15,7 +15,7 @@ export default function AboutCreatorPage() {
   return (
     <div className="relative w-full">
       
-      {/* New Section: Understanding The YOU Continuum */}
+      {/* New Section: About the Creator */}
       <section ref={nextSectionRef} className="relative bg-evergreen-800 py-20 px-6 md:px-12">
         <div className="max-w-7xl px-[24px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-[80px]">
           

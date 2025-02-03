@@ -23,7 +23,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-4">
         {[
             { name: "Home", href: "/" },
             { name: "Philosophy", href: "/philosophy" },
@@ -33,8 +33,8 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-stone-800 hover:text-evergreen-600 transition-all duration-300 
-                ${pathname === link.href ? "text-evergreen-700 font-bold" : ""}`}
+              className={`text-[14px] text-stone-800 hover:font-bold hover:text-evergreen-600 transition-all duration-300 
+                ${pathname === link.href ? "text-evergreen-700 font-bold hover:text-evergreen-700" : ""}`}
             >
               {link.name}
             </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 { name: "Home", href: "/" },
                 { name: "Philosophy", href: "/philosophy" },
                 { name: "Self-Care Compass", href: "/self-care-compass" },
-                { name: "About the Creator", href: "/about" },
+                { name: "About the Creator", href: "/about-the-creator" },
                 { name: "Blog", href: "/blog" },
               ].map((link) => (
                 <Link

@@ -38,7 +38,7 @@ export default function SelfCareCompass() {
           {/* Content Card */}
           <div className="w-full bg-white px-[24px] md:px-[80px] py-[54px] rounded-[32px] shadow-lg">
             <h1 className="font-andika text-2xl font-bold text-stone-950 leading-tight">
-              What is the Self-Care Compass?
+              What is the Self-Care Compass? 
             </h1>
             <p className="font-ptSans text-stone-950 mt-4">
             A risk matrix is a tool commonly used in business quality management principles to assess and prioritize risks by evaluating their likelihood and impact. In the context of personal values, life domains, and current circumstances, the risk matrix can serve as a framework to identify areas in life requiring attention and to prioritize self-care strategies accordingly.</p>
@@ -156,7 +156,7 @@ export default function SelfCareCompass() {
 
       {/* Self-Care Model Section */}
       <section className="bg-stone-50 py-20 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
 
           {/* Self-Care Heading */}
           <div className="mb-10">
@@ -177,7 +177,7 @@ The Self-Care Compass does all the scoring for you and provides immediate result
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Value Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Value</h3>
               <p className="font-ptSans text-stone-800 mt-2">
                 Rates the importance of the value you give each life domain, on a scale of 1 to 5, where 1 means 
@@ -187,7 +187,7 @@ The Self-Care Compass does all the scoring for you and provides immediate result
             </div>
 
             {/* Negative Impact Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Negative Impact</h3>
               <p className="font-ptSans text-stone-800 mt-2">
                 Rates the seriousness of the negative impact on each life domain, on a scale of 1 to 5, with 1 
@@ -197,7 +197,7 @@ The Self-Care Compass does all the scoring for you and provides immediate result
             </div>
 
             {/* Detection Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Detection</h3>
               <p className="font-ptSans text-stone-800 mt-2">
                 Rates the likelihood that failure or misalignment of your values and life domains will be detected 
