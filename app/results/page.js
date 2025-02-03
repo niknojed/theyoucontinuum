@@ -19,23 +19,17 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale);
 export default function ResultsPage() {
   const [chartData, setChartData] = useState(null);
   const [groupedValues, setGroupedValues] = useState({});
-  const [showValues, setShowValues] = useState(false);
   const router = useRouter();
   const chartRef = useRef(null);
 
   useEffect(() => {
-    // Retrieve the user's selected values from localStorage
     const storedResults = JSON.parse(localStorage.getItem("results"));
-    console.log("Selected values from Phase 1:", storedResults);
-
     if (!storedResults) {
-      router.push("/identify-core-values"); // Redirect if no data is found
+      router.push("/identify-core-values");
       return;
     }
 
-    // Flatten the selected values into an array and remove duplicates
     const flatValues = [...new Set(Object.values(storedResults).flat())];
-    console.log("Flattened selected values:", flatValues);
 
     // Group selected values by Life Domain
     const grouped = Object.entries(lifeDomains).reduce((acc, [domain, values]) => {
@@ -46,15 +40,12 @@ export default function ResultsPage() {
       return acc;
     }, {});
     setGroupedValues(grouped);
-    console.log("Grouped values by Life Domain:", grouped);
 
     // Calculate percentages for Life Domains
     const rankings = calculateLifeDomainScores(flatValues);
-    console.log("Calculated ranked domains:", rankings);
 
     // Save rankings to localStorage for later use
     localStorage.setItem("rankings", JSON.stringify(rankings));
-
 
     // Prepare chart data for the pie chart
     const labels = rankings.map((item) => item.domain);
@@ -62,7 +53,7 @@ export default function ResultsPage() {
     const backgroundColors = [
       "#6e9980", "#3a614d", "#d6969b", "#ad515f", "#fabe25",
       "#d97607", "#bc580a", "#b5895a", "#20342b"
-    ]; // Distinct colors for each domain
+    ]; 
 
     setChartData({
       labels,
@@ -80,7 +71,7 @@ export default function ResultsPage() {
     // Find the index of the highest percentage slice
     const maxIndex = data.indexOf(Math.max(...data));
 
-    // Delay setting tooltip to avoid rendering issues
+    // Set tooltip on highest slice
     setTimeout(() => {
       if (chartRef.current) {
         const chartInstance = chartRef.current;
@@ -143,28 +134,22 @@ export default function ResultsPage() {
         </div>
       </div>
 
-      {/* Collapsible Section */}
-      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6 mb-6">
-        <button
-          onClick={() => setShowValues(!showValues)}
-          className="w-full text-left text-lg font-semibold text-teal-600 focus:outline-none"
-        >
-          {showValues ? "Hide the values I selected" : "Show the values I selected"}
-        </button>
-        {showValues && (
-          <div className="mt-4 space-y-4">
-            {Object.entries(groupedValues).map(([domain, values]) => (
-              <div key={domain}>
-                <h3 className="text-md font-semibold text-teal-600">{domain}</h3>
-                <ul className="list-disc list-inside">
-                  {values.map((value, index) => (
-                    <li key={index} className="text-gray-700">{value}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
+      {/* Selected Values Section - Grid Layout */}
+      <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mb-6">
+        <h2 className="text-lg font-semibold text-teal-600 mb-4">Values You Selected</h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {Object.entries(groupedValues).map(([domain, values]) => (
+            <div key={domain} className="bg-gray-100 p-4 rounded-lg shadow-sm">
+              <h3 className="text-md font-semibold text-teal-700">{domain}</h3>
+              <ul className="mt-2 space-y-1">
+                {values.map((value, index) => (
+                  <li key={index} className="text-gray-700 text-sm">{value}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Next Step Button */}
