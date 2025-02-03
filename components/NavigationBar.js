@@ -96,7 +96,7 @@ export default function Navbar() {
 
 // === SELF-CARE COMPASS NAVIGATION BAR ===
 const SelfCareCompassNavbar = () => (
-  <nav className="fixed top-0 left-0 right-0 bg-evergreen-900 text-white py-4 px-6 md:px-12 flex items-center justify-between shadow-lg z-50">
+  <nav className="fixed top-0 left-0 right-0 bg-stone-950 text-white py-4 px-6 md:px-12 flex items-center justify-between shadow-lg z-50">
     <div className="flex items-center">
       <Image src="/self-care-compass-logo.svg" width={292} height={50} alt="Self-Care Compass" />
     </div>

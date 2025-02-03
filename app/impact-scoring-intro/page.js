@@ -25,8 +25,8 @@ export default function ImpactScoringIntro() {
       style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
     >
     <div className="w-full">
-      <div className="max-w-4xl px-4 mx-auto pt-16">
-        <h1 className="font-andika text-xl md:text-2xl font-bold text-white mb-4">Impact Scoring</h1>
+      <div className="max-w-4xl px-4 mx-auto">
+        <h1 className="font-andika text-xl md:text-2xl font-bold text-evergreen-200 mb-4">Impact Scoring</h1>
         <p className="font-ptSans text-white text-[16px] font-light mb-10">
           Now that you have identified your core values and aligned them with the nine life domains, it’s time to identify the negative impact level you are experiencing. You will also identify any detection systems and preventative measures you have in place within each life domain. These scores are intended to:
         </p>

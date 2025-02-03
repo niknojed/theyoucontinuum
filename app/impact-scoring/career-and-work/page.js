@@ -41,7 +41,7 @@ export default function CareerAndAmbitionsScoring() {
         <span className="font-ptSans mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
-        <h1 className="font-andika text-xl md:text-2xl text-white mb4">Career & Ambitions</h1>
+        <h1 className="font-andika text-xl md:text-2xl text-evergreen-300 mb4">Career & Ambitions</h1>
 
         {/* Impact Slider */}
         <div className="pb-6 mb-6 max-w-2xl">
@@ -89,7 +89,7 @@ export default function CareerAndAmbitionsScoring() {
 
         <button
           onClick={handleNext}
-          className="px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-green-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
+          className="px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
           Next: Family & Relationships
         </button>
       </div>

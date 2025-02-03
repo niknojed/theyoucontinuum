@@ -32,8 +32,12 @@ export default function FinancesScoring() {
   };
 
   return (
+    <section 
+      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] md:pt-[40px] pb-0"
+      style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
+    >
     <div className="w-full">
-      <div className="max-w-7xl px-4 mx-auto pt-8">
+      <div className="max-w-4xl px-4 mx-auto pt-8">
         <span className="mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
@@ -85,10 +89,11 @@ export default function FinancesScoring() {
 
       <button
         onClick={handleNext}
-        className="px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-green-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
+        className="px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
         Next: Recreation & Leisure
       </button>
       </div>
     </div>
+    </section>
   );
 }
