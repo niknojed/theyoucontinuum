@@ -216,16 +216,7 @@ export default function PhilosophyPage() {
 
       {/* Start Your Journey Section */}
       <section className="text-white py-20 px-6 md:px-12 flex justify-center" style={{ background: "linear-gradient(180deg, #69323F 0%, #39181F 100%)" }}>
-        <div className="px-[24px] max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          
-          {/* Left: Compass Image */}
-          <div className="flex justify-center">
-            <img 
-              src="/compass-image.png" 
-              alt="Compass representing direction" 
-              className="w-full max-w-md md:max-w-lg rounded-2xl shadow-lg"
-            />
-          </div>
+        <div className="px-[24px] max-w-7xl w-full grid grid-cols-1 gap-10 items-center">
 
           {/* Right: Text Content */}
           <div>
@@ -258,12 +249,9 @@ export default function PhilosophyPage() {
 
       {/* Footer Section */}
       <footer className="bg-rose-950 text-white py-6 px-6 md:px-12">
-        <div className="max-w-7xl px-[24px] mx-auto text-center">
-          
-          {/* Subtle Divider */}
-          <hr className="border-rose-400 mb-4" />
+        <div className="max-w-7xl px-[24px] mx-auto">
 
-          <p className="text-sm">
+          <p className="text-[14px] text-white">
             The YOU Continuum. {new Date().getFullYear()}. All Rights Reserved
           </p>
         </div>
