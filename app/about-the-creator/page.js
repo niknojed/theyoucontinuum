@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function AboutCreatorPage() {
@@ -10,6 +11,8 @@ export default function AboutCreatorPage() {
   const scrollToNextSection = () => {
     nextSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const router = useRouter();
 
   const handleStart = () => {
     router.push("/what-to-expect");

@@ -151,18 +151,18 @@ export default function SummaryResultsPage() {
 
       {/* Email Submission & PDF Download Section */}
       <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 mt-8">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">Get Your Full Results</h3>
-        <p className="text-gray-700 mb-4">
+        <h3 className="font-ptSans text-[21px] font-semibold text-gray-800 mb-4">Get Your Full Results</h3>
+        <p className="font-ptSans text-stone-700 mb-4">
           Enter your email address to receive a detailed report with all priority information.
         </p>
         {emailSubmitted ? (
           <>
-            <p className="text-green-600">Thank you! Your results have been sent to {email}.</p>
+            <p className="font-ptSans text-green-600">Thank you! Your results have been sent to {email}.</p>
             {pdfUrl && (
               <a 
                 href={pdfUrl} 
                 download 
-                className="mt-4 block text-center bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition"
+                className="font-ptSans mt-4 block text-center bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition"
               >
                 Download Your PDF
               </a>
@@ -175,12 +175,11 @@ export default function SummaryResultsPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="w-full px-4 py-2 border rounded-md mb-4"
+              className="font-ptSans w-full px-4 py-2 border rounded-md mb-4"
             />
             <button
               onClick={handleEmailSubmit}
-              className="w-full px-4 py-2 bg-teal-500 text-white rounded-md shadow hover:bg-teal-600"
-            >
+              className="font-ptSans px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
               Send My Results
             </button>
           </>

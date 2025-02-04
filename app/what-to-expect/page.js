@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Breadcrumb from "../../components/Breadcrumb"; 
 
 export default function WhatToExpect() {
   const router = useRouter();
@@ -15,6 +16,8 @@ export default function WhatToExpect() {
       style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
     >
       <div className="max-w-4xl w-full p-8 md:p-12 mt-16">
+
+        <Breadcrumb/>
         
         {/* Header */}
         <h1 className="font-andika text-xl md:text-2xl font-bold text-evergreen-200">

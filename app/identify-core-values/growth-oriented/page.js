@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import ValueChips from "../../../components/ValueChips"; // Chips component
+import Breadcrumb from "../../../components/Breadcrumb"; 
 
 const values = [
   "Achievement",
@@ -45,6 +46,7 @@ export default function GrowthOrientedPage() {
     >
     <div className="w-full">
       <div className="max-w-4xl px-4 mx-auto">
+        <Breadcrumb/>
         <span className="font-ptSans mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Identifying Values
         </span>

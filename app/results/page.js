@@ -95,7 +95,7 @@ export default function ResultsPage() {
     <div className="bg-evergreen-50 pt-[140px] w-full px-[24px] mx-auto p-6 flex flex-col items-center">
       <div className="max-w-4xl pb-4">
           <h1 className="font-andika text-xl font-bold text-gray-800 mb-3">Your Life Domain Rankings</h1>
-          <p className="font-ptSanse text-gray-700 text-[16px] mb-3">
+          <p className="font-ptSans text-gray-700 text-[16px] mb-3">
             Based on the values you selected, here's how they align with the nine life domains. The highest percentage indicates the domain you value most. Continue to the impact scoring area to see how these values are impacting your life.
           </p>
           <button
@@ -134,7 +134,7 @@ export default function ResultsPage() {
         {/* Custom Legend - Right of Pie Chart on Desktop, Below on Mobile */}
         <div className="w-full md:w-1/2 mt-6 ml-8 md:mt-10 flex flex-col space-y-2">
           {chartData.labels.map((label, index) => (
-            <div key={index} className="flex items-center space-x-2 text-gray-700 text-sm">
+            <div key={index} className="font-andika flex items-center space-x-2 text-gray-700 text-sm">
               <span 
                 className="w-4 h-4 rounded-full inline-block"
                 style={{ backgroundColor: chartData.datasets[0].backgroundColor[index] }}
@@ -147,13 +147,13 @@ export default function ResultsPage() {
 
       {/* Selected Values Section - Grid Layout */}
       <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mb-6">
-        <h2 className="text-lg font-semibold text-evergreen-600 mb-4">Values You Selected</h2>
+        <h2 className="font-andika text-lg font-semibold text-evergreen-600 mb-4">Values You Selected</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {Object.entries(groupedValues).map(([domain, values]) => (
             <div key={domain} className="bg-gray-100 p-4 rounded-lg shadow-sm">
-              <h3 className="text-md font-semibold text-evergreen-500">{domain}</h3>
-              <ul className="mt-2 space-y-1">
+              <h3 className="font-andika text-md font-semibold text-evergreen-500">{domain}</h3>
+              <ul className="font-ptSans mt-2 space-y-1">
                 {values.map((value, index) => (
                   <li key={index} className="text-gray-700 text-sm">{value}</li>
                 ))}

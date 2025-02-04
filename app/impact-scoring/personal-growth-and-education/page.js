@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Breadcrumb from "../../../components/Breadcrumb"; 
 
 export default function PersonalGrowthAndEducationScoring() {
   const [impactScore, setImpactScore] = useState(1);
@@ -38,6 +39,7 @@ export default function PersonalGrowthAndEducationScoring() {
     >
     <div className="w-full">
       <div className="max-w-4xl px-4 mx-auto pt-8">
+        <Breadcrumb />
         <span className="mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
@@ -45,8 +47,8 @@ export default function PersonalGrowthAndEducationScoring() {
 
       {/* Impact Slider */}
       <div className="pb-6 mb-6 max-w-2xl">
-          <h2 className="text-lg font-semibold text-white mb-4">Negative Impact</h2>
-          <p className="text-white mb-4">
+          <h2 className="font-ptSans text-[21px] font-semibold text-white mb-4">Negative Impact</h2>
+          <p className="font-ptSans text-white mb-4">
             Consider the negative impact you are experiencing in this domain. Use the sliding scale to identify the severity of the impact.
           </p>
           <input
@@ -57,7 +59,7 @@ export default function PersonalGrowthAndEducationScoring() {
             onChange={(e) => setImpactScore(Number(e.target.value))}
             className="w-full"
           />
-          <p className="text-white mt-2">
+          <p className="font-ptSans text-white mt-2">
             <span className="text-evergreen-200"><strong>Impact Level {impactScore}:</strong></span> {impactDescriptions[impactScore]}
           </p>
         </div>
@@ -70,8 +72,8 @@ export default function PersonalGrowthAndEducationScoring() {
 
         {/* Detection Slider */}
         <div className="pb-8 pt-8 max-w-2xl">
-          <h2 className="text-lg font-semibold text-white mb-4">Detection</h2>
-          <p className="text-white mb-4">
+          <h2 className="font-ptSans text-[21px] font-semibold text-white mb-4">Detection</h2>
+          <p className="font-ptSans text-white mb-4">
             Consider the detection systems and preventative measures you have implemented in this domain. Use the sliding scale to identify the likelihood of detection.
           </p>
           <input
@@ -82,14 +84,14 @@ export default function PersonalGrowthAndEducationScoring() {
             onChange={(e) => setDetectionScore(Number(e.target.value))}
             className="w-full"
           />
-          <p className="text-white mt-2">
+          <p className="font-ptSans text-white mt-2">
             <span className="text-evergreen-200"><strong>Detection Level {detectionScore}:</strong></span> {detectionDescriptions[detectionScore]}
           </p>
         </div>
 
         <button
           onClick={handleNext}
-          className="px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
+          className="font-ptSans px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
           Next: Finances
         </button>
       </div>
