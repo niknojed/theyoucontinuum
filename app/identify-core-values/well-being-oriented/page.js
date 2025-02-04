@@ -51,11 +51,11 @@ export default function WellBeingOrientedPage() {
               Identifying Values
             </span>
             <h1 className="font-andika text-2xl text-evergreen-200 mb-6">4. Well-Being-Oriented Values</h1>
-            <p className="font-ptSans pb-4 text-[14px] text-white font-light">
+            <p className="font-ptSans pb-4 text-[17px] text-white font-light">
               Well-being-oriented values center on maintaining balance, health, and personal happiness. These values emphasize the importance of self-care, mindfulness, and creating harmony across various aspects of life. By focusing on well-being, individuals prioritize their physical, mental, and emotional health, leading to reduced stress and an improved quality of life. These values create a strong foundation for sustainable personal and professional growth while enhancing overall life satisfaction.            </p>        
             
             <div className="pb-8">
-              <p className="font-ptSans max-w-xl pb-6 text-[14px] text-white font-bold">
+              <p className="font-ptSans max-w-xl pb-6 text-[15px] text-white font-bold">
                 Think about what matters most to you in life. Select which values feel the most essential to who you are and who you want to be.          
               </p>
               <ValueChips values={values} selectedValues={selectedValues} onSelect={handleSelect} />

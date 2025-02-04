@@ -56,12 +56,12 @@ export default function RelationshipOrientedPage() {
           Identifying Values
         </span>
         <h1 className="font-andika text-2xl text-evergreen-200 mb-6">2. Relationship Oriented Values</h1>
-        <p className="font-ptSans pb-4 text-[14px] text-white font-light">
+        <p className="font-ptSans pb-4 text-[17px] text-white font-light">
           Relationship-oriented values focus on building and maintaining meaningful connections with others. They prioritize love, trust, compassion, and a sense of belonging within personal and professional relationships. These values significantly impact how individuals interact with family, friends, colleagues, and communities, fostering emotional well-being and strong support systems. By valuing relationships, individuals create deeper connections that inspire kindness, empathy, and shared purpose.        
         </p>        
         
         <div className="pb-8">
-          <p className="font-ptSans pb-6 text-sm text-white font-bold">
+          <p className="font-ptSans text-[15px] pb-6 text-sm text-white font-bold">
             Think about what matters most to you in life. Select which values feel the most essential to who you are and who you want to be.          
           </p>
           <ValueChips values={values} selectedValues={selectedValues} onSelect={handleSelect} />

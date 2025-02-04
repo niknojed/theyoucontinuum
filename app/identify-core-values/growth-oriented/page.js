@@ -51,11 +51,11 @@ export default function GrowthOrientedPage() {
           Identifying Values
         </span>
         <h1 className="font-andika text-2xl text-evergreen-200 mb-6">1. Growth Oriented Values</h1>
-        <p className="font-ptSans pb-4 text-[14px] text-white font-light">
+        <p className="font-ptSans pb-4 text-[17px] text-white font-light">
           Growth-oriented values emphasize self-improvement, learning, and personal evolution. These values inspire curiosity and a desire to continually enhance skills, knowledge, and perspectives. They foster resilience and a proactive mindset, empowering individuals to navigate challenges and embrace opportunities for development. By prioritizing growth, these values shape career decisions, personal aspirations, and the pursuit of meaningful experiences that lead to greater self-awareness and adaptability.</p>
         
         <div className="pb-8">
-          <p className="font-ptSans max-w-xl pb-6 text-[14px] text-white font-bold">
+          <p className="font-ptSans max-w-xl pb-6 text-[15px] text-white font-bold">
             Think about what matters most to you in life. Select which values feel the most essential to who you are and who you want to be.          
           </p>
           <ValueChips values={values} selectedValues={selectedValues} onSelect={handleSelect} />

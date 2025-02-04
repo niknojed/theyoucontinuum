@@ -70,11 +70,11 @@ export default function SocialImpactOrientedPage() {
           Identifying Values
         </span>
         <h1 className="font-andika text-2xl text-evergreen-200 mb-6">5. Social Impact-Oriented Values</h1>
-        <p className="font-ptSans pb-4 text-[14px] text-white font-light">
+        <p className="font-ptSans pb-4 text-[17px] text-white font-light">
           Social impact-oriented values reflect a deep commitment to making a positive difference in the world. These values emphasize contribution, service, justice, and environmental stewardship, driving individuals to advocate for meaningful causes and contribute to their communities. By focusing on social impact, individuals connect their personal actions to a greater good, finding purpose and fulfillment through their efforts to leave a lasting, positive legacy.
         </p>        
         <div className="pb-8">
-          <p className="font-ptSans max-w-xl pb-6 text-[14px] text-white font-bold">
+          <p className="font-ptSans max-w-xl pb-6 text-[15px] text-white font-bold">
             Think about what matters most to you in life. Select which values feel the most essential to who you are and who you want to be.          
           </p>
           <ValueChips values={values} selectedValues={selectedValues} onSelect={handleSelect} />

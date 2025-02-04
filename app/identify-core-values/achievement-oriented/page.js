@@ -55,12 +55,12 @@ export default function AchievementOrientedPage() {
           Identifying Values
         </span>
         <h1 className="font-andika text-2xl text-evergreen-200 mb-6">3. Achievement Oriented Values</h1>
-        <p className="font-ptSans pb-4 text-[14px] text-white font-light">
+        <p className="font-ptSans pb-4 text-[17px] text-white font-light">
           Achievement-oriented values drive ambition, discipline, and the pursuit of success. They encourage individuals to set and accomplish meaningful goals, take initiative, and overcome obstacles. These values are particularly influential in competitive or goal-driven environments such as careers and academics, where they foster confidence and leadership. By prioritizing achievement, individuals develop perseverance and a results-driven mindset, enabling them to thrive in the face of challenges.
         </p>        
         
         <div className="pb-8">
-          <p className="font-ptSans max-w-xl pb-6 text-[14px] text-white font-bold">
+          <p className="font-ptSans max-w-xl pb-6 text-[15px] text-white font-bold">
             Think about what matters most to you in life. Select which values feel the most essential to who you are and who you want to be.          
           </p>
           <ValueChips values={values} selectedValues={selectedValues} onSelect={handleSelect} />
