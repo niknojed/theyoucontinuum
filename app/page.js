@@ -45,7 +45,7 @@ export default function HomePage() {
                 <h1 className="font-andika text-2xl font-bold text-evergreen-950 leading-tight">
                   Aligning Self-Care with Your Evolving Values 
                 </h1>
-                <p className="font-ptSans text-evergreen-950 mt-4">
+                <p className="font-ptSans text-[19px] text-evergreen-950 mt-4">
                   With so many strategies and resources available to improve different areas of life, or life domains—like health, relationships, career, and more—it can be hard to know where to start. Often, people feel stuck because they aren’t sure which area carries the highest risk to their well-being or which is most important to focus on right now.
                 </p>
 
@@ -100,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* New Section: Understanding The YOU Continuum */}
-      <section ref={nextSectionRef} className="relative bg-evergreen-800 py-32 md:pt-40 px-6 md:px-12">
+      <section ref={nextSectionRef} className="relative bg-evergreen-800 py-32 md:pt-32 px-6 md:px-12">
         <div className="max-w-7xl px-[24px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Left Image */}
@@ -117,14 +117,14 @@ export default function HomePage() {
             <h2 className="font-andika text-xl md:text-2xl font-bold md:font-normal text-white">
               Understanding The YOU Continuum
             </h2>
-            <p className="font-ptSans text-white mt-4 leading-relaxed">
+            <p className="font-ptSans text-[19px] font-normal text-white mt-4 leading-relaxed">
               A continuum represents small, incremental changes, a seamless flow where one point transitions 
               smoothly into the next, creating a cohesive and unified whole. There are no abrupt gaps, only 
               gradual shifts—a concept that mirrors the ever-evolving journey of your personal values and self-care needs. 
               The YOU Continuum uses data to provide a clear path to improvement, specifically helping you to 
               better identify and prioritize the different areas of life.
             </p>
-            <p className="font-ptSans text-white mt-4 leading-relaxed">
+            <p className="font-ptSans text-[19px] text-white mt-4 leading-relaxed">
               By addressing the life domain most in need of attention, and aligning your actions with your 
               current values, The YOU Continuum provides a clear, actionable starting point for meaningful self-care.
             </p>
@@ -166,7 +166,7 @@ export default function HomePage() {
             <h2 className="font-andika text-xl md:text-2xl font-bold text-white">
               Begin your journey
             </h2>
-            <p className="font-ptSans pt-4 pb-6 leading-relaxed text-stone-50">
+            <p className="font-ptSans text-[19px] pt-4 pb-6 leading-relaxed text-stone-50">
               Which of these domains resonates with you right now? Your path to a balanced, fulfilling life starts by exploring 
               the domains that matter most to you. Dive deeper into your core values to understand which life domain could benefit 
               most from your focus and take the first step toward positive change.

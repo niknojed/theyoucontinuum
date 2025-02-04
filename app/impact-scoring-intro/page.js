@@ -21,7 +21,7 @@ export default function ImpactScoringIntro() {
 
   return (
     <section 
-      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] pb-0"
+      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[120px] pb-0"
       style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
     >
     <div className="w-full">
@@ -57,6 +57,20 @@ export default function ImpactScoringIntro() {
         </button>
       </div>
     </div>
+
+    {/* Footer Section */}
+    <footer className="w-full text-white py-6 px-6 md:px-12 mt-8">
+        <div>
+          
+          {/* Subtle Divider */}
+          <hr className="border-stone-400 mb-4" />
+
+          <p className="text-[12px]">
+            The YOU Continuum. {new Date().getFullYear()}. All Rights Reserved
+          </p>
+        </div>
+      </footer>
+
     </section>
   );
 }

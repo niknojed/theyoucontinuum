@@ -101,7 +101,7 @@ export default function CircularCarousel() {
       <h2 className="font-andika text-xl md:text-2xl font-bold md:font-bold text-stone-950 mb-4">
         Discover the Nine Life Domains
       </h2>
-      <p className="font-ptSans text-stone-950 text-center max-w-3xl mb-10">
+      <p className="font-ptSans text-[19px] text-stone-950 text-center max-w-3xl mb-10">
         Life is constantly changing, and understanding the evolving aspects of your personal well-being can help you lead a more fulfilled life.
       </p>
 
@@ -146,7 +146,7 @@ export default function CircularCarousel() {
         {/* Center Content Card */}
         <div className="absolute w-96 bg-white p-10 rounded-lg shadow-lg text-center">
           <h3 className="font-andika text-xl font-bold text-gray-900">{selectedDomain.label}</h3>
-          <p className="font-ptSans text-[15px] text-stone-900 mt-2">{selectedDomain.description}</p>
+          <p className="font-ptSans text-[16px] text-stone-900 mt-2">{selectedDomain.description}</p>
           <button 
             onClick={openSheet}
             className="mt-4 px-6 py-2 bg-evergreen-600 text-white rounded-full shadow-md hover:bg-evergreen-700"

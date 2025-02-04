@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import BackButton from "../../../components/BackButton";
 
 export default function HealthAndWellnessScoring() {
   const [impactScore, setImpactScore] = useState(1);
@@ -33,15 +34,18 @@ export default function HealthAndWellnessScoring() {
 
   return (
     <section 
-      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] md:pt-[40px] pb-0"
+      className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-[80px] pb-0"
       style={{ background: "radial-gradient(100.09% 99.55% at 63.47% 2.34%, #536367 5.17%, #383E41 86.12%)" }}
     >
     <div className="w-full">
       <div className="max-w-4xl px-4 mx-auto pt-8">
+        <div className="mb-4 mt-4">
+          <BackButton />
+        </div>
         <span className="mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
-        <h1 className="text-2xl text-evergreen-200 mb-6">Health & Wellness</h1>
+        <h1 className="font-andika text-xl md:text-2xl text-evergreen-200 mb-6">Health & Wellness</h1>
 
         {/* Impact Slider */}
         <div className="pb-6 mb-6 max-w-2xl">
@@ -94,6 +98,19 @@ export default function HealthAndWellnessScoring() {
         </button>
         </div>
     </div>
+
+    {/* Footer Section */}
+    <footer className="w-full text-white py-6 px-6 md:px-12 mt-8">
+        <div>
+          
+          {/* Subtle Divider */}
+          <hr className="border-stone-400 mb-4" />
+
+          <p className="text-[12px]">
+            The YOU Continuum. {new Date().getFullYear()}. All Rights Reserved
+          </p>
+        </div>
+      </footer>
     </section>
   );
 }

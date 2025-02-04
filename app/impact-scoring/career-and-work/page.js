@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import BackButton from "../../../components/BackButton";
 
 export default function CareerAndAmbitionsScoring() {
   const [impactScore, setImpactScore] = useState(1);
@@ -38,15 +39,18 @@ export default function CareerAndAmbitionsScoring() {
     >
     <div className="w-full">
       <div className="max-w-4xl px-4 mx-auto pt-8">
+        <div className="mb-4 mt-4">
+                  <BackButton />
+                </div>
         <span className="font-ptSans mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
-        <h1 className="font-andika text-xl md:text-2xl text-evergreen-300 mb4">Career & Ambitions</h1>
+        <h1 className="font-andika text-xl md:text-2xl text-evergreen-200 mb-6">Career & Ambitions</h1>
 
         {/* Impact Slider */}
         <div className="pb-6 mb-6 max-w-2xl">
-          <h2 className="text-lg font-semibold text-white mb-4">Negative Impact</h2>
-          <p className="text-white mb-4">
+          <h2 className="font-ptSans text-[19px] font-semibold text-white mb-2">Negative Impact</h2>
+          <p className="font-ptSans text-[16px] text-white mb-4">
             Consider the negative impact you are experiencing in this domain. Use the sliding scale to identify the severity of the impact.
           </p>
           <input
@@ -94,6 +98,19 @@ export default function CareerAndAmbitionsScoring() {
         </button>
       </div>
     </div>
+
+    {/* Footer Section */}
+    <footer className="w-full text-white py-6 px-6 md:px-12 mt-8">
+        <div>
+          
+          {/* Subtle Divider */}
+          <hr className="border-stone-400 mb-4" />
+
+          <p className="text-[12px]">
+            The YOU Continuum. {new Date().getFullYear()}. All Rights Reserved
+          </p>
+        </div>
+      </footer>
     </section>
   );
 }
