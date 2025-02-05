@@ -149,8 +149,11 @@ export default function HealthAndWellnessScoring() {
 
       <Drawer
         title="Detection Example"
-        content="You can detect issues early by tracking behaviors, journaling, or seeking feedback from close relationships."
-        imageUrl="/example-image.jpg" // Optional: Include an image if needed
+        content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
+          "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
+          "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+  ]}  
+        imageUrl="/crying.svg" // Optional: Include an image if needed
         open={isDetectionOpen}
         setOpen={setDetectionOpen}
       />

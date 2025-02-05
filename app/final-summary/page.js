@@ -25,7 +25,7 @@ export default function SummaryResultsPage() {
 
   const impactZones = [
     { name: "Healthy Zone", range: [1, 25], description: "You're in a balanced place. Keep reinforcing positive habits to maintain stability." },
-    { name: "Caution Zone", range: [26, 50], description: "Some areas may need attention soon to prevent future strain." },
+    { name: "Caution Zone", range: [26, 50], description: "Some areas may need attention soon to prevent. Self-care isn’t one-size-fits-all—it’s about finding what works for YOU." },
     { name: "Action Zone", range: [51, 75], description: "An imbalance is present. Adjustments are needed to realign with your well-being." },
     { name: "Urgent Zone", range: [76, 100], description: "There are significant stressors. Consider taking immediate steps to support yourself." },
     { name: "Crisis Zone", range: [101, Infinity], description: "Your well-being is at risk. It's important to seek support and prioritize care." },
@@ -94,8 +94,8 @@ export default function SummaryResultsPage() {
 
   return (
     <div className="bg-evergreen-50 pt-[140px] max-w-7xl px-[24px] mx-auto p-6 flex flex-col items-center">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Your Self-Care Focus Areas</h1>
-      <p className="text-md text-gray-700 text-center max-w-xl mb-8">
+      <h1 className="font-andika text-2xl font-bold text-gray-800 mb-4">Your Self-Care Focus Areas</h1>
+      <p className="font-ptSans text-[17px] text-stone-700 text-center max-w-xl mb-8">
         These are the key areas that need your attention right now. Reflect on what they mean for you.
       </p>
 
@@ -105,40 +105,40 @@ export default function SummaryResultsPage() {
           <div 
             key={index}
             className={`p-6 rounded-lg shadow-lg text-center border ${
-              index === 0 ? "border-teal-600 bg-teal-50" : 
-              index === 1 ? "border-blue-500 bg-blue-50" : 
-              "border-amber-500 bg-amber-50"
+              index === 0 ? "border-evergreen-600 bg-evergreen-100" : 
+              index === 1 ? "border-auburn-500 bg-auburn-50" : 
+              "border-rose-500 bg-rose-50"
             }`}
           >
             {/* Domain Icon */}
-            <div className="text-4xl">{result.icon}</div>
+            <div className="text-xl">{result.icon}</div>
 
             {/* Domain Name */}
-            <h2 className="text-xl font-semibold text-gray-900 mt-2">{result.name}</h2>
+            <h2 className="font-andika text-[19px] font-semibold text-gray-900 mt-2">{result.name}</h2>
 
             {/* Priority Score (Leading Metric) */}
-            <p className="mt-2 text-lg font-bold text-gray-800">
+            <p className="font-ptSans mt-2 text-lg font-bold text-stone-950">
               Priority Score: {result.priorityNumber}
             </p>
 
             {/* Secondary Metric - Percentage */}
-            <p className="mt-1 text-md text-gray-700">
+            <p className="font-ptSans mt-1 text-[15px] text-gray-700">
               {result.percentage}% of selected values
             </p>
 
             {/* Impact Zone */}
-            <p className="mt-4 text-md font-bold text-gray-900">{result.impactZone}</p>
-            <p className="text-sm text-gray-600">{result.zoneDescription}</p>
+            <p className="font-ptSans mt-4 text-md font-bold text-stone-950">{result.impactZone}</p>
+            <p className="font-ptSans text-sm text-gray-600">{result.zoneDescription}</p>
 
             {/* Actionable Tip */}
-            <p className="mt-4 text-xs text-gray-700 italic">
+            <p className="font-ptSans mt-4 text-xs text-gray-700 italic">
               ⭐ Small Step: <span className="font-medium">Take 10 minutes today</span> to reflect on how this domain is affecting your well-being.
             </p>
 
             {/* Expandable Extra Details Section */}
             <details className="mt-4">
-              <summary className="cursor-pointer text-teal-600 hover:underline text-sm font-semibold">
-                Learn more about {result.name}
+              <summary className="cursor-pointer text-evergreen-600 hover:underline text-[16px] font-semibold">
+                Learn more about this area
               </summary>
               <p className="mt-2 text-sm text-gray-700">
                 {/* 📝 Replace this with your detailed content */}
@@ -150,7 +150,7 @@ export default function SummaryResultsPage() {
       </div>
 
       {/* Email Submission & PDF Download Section */}
-      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6 mt-8">
+      <div className="w-full max-w-5xl bg-white shadow-md rounded-lg p-6 mt-8">
         <h3 className="font-ptSans text-[21px] font-semibold text-gray-800 mb-4">Get Your Full Results</h3>
         <p className="font-ptSans text-stone-700 mb-4">
           Enter your email address to receive a detailed report with all priority information.

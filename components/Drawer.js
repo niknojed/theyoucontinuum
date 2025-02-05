@@ -86,7 +86,7 @@ export default function Drawer({ title, content, imageUrl, open, setOpen }) {
 
                 {/* Ensure content is an array before mapping */}
                 {(Array.isArray(content) ? content : [content]).map((paragraph, index) => (
-                  <p key={index} className="text-gray-700 leading-relaxed">
+                  <p key={index} className="text-stone-700 leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
