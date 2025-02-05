@@ -179,9 +179,9 @@ export default function PhilosophyPage() {
               <p className="font-ptSans text-[17px] text-stone-700 mt-2">
                 <strong>2. Living with Purpose:</strong> Self-care isn’t just about what you do—it’s about why you do it. Intentional actions ensure your efforts create meaningful and lasting change in your life.
               </p>
-              <a href="/blog" className="inline-flex items-center text-rose-600 font-bold hover:text-rose-800 transition duration-300 mt-4">
+              {/*<a href="/blog" className="inline-flex items-center text-rose-600 font-bold hover:text-rose-800 transition duration-300 mt-4">
                 → Visit Self-Care Compass blog for more info
-              </a>
+              </a>*/}
             </div>
           </div>
 

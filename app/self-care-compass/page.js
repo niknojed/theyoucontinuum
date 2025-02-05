@@ -40,7 +40,7 @@ export default function SelfCareCompass() {
             <h1 className="font-andika text-2xl font-bold text-stone-950 leading-tight">
               What is the Self-Care Compass? 
             </h1>
-            <p className="font-ptSans text-stone-950 mt-4">
+            <p className="font-ptSans text-[19px] text-stone-950 mt-4">
             A risk matrix is a tool commonly used in business quality management principles to assess and prioritize risks by evaluating their likelihood and impact. In the context of personal values, life domains, and current circumstances, the risk matrix can serve as a framework to identify areas in life requiring attention and to prioritize self-care strategies accordingly.</p>
 
             {/* Buttons */}
@@ -56,11 +56,6 @@ export default function SelfCareCompass() {
                   <span className="hidden md:block">Get started with the Self-Care Compass</span>
               </button>
 
-              <Link href="/learn-more">
-                <button className="font-ptSans px-6 py-3 border-2 border-sand-500 text-sand-700 font-medium rounded-full hover:bg-sand-100">
-                  Learn more
-                </button>
-              </Link>
             </div>
           </div>
         </div>
@@ -77,15 +72,15 @@ export default function SelfCareCompass() {
             <h2 className="font-andika text-xl md:text-2xl font-bold text-white">
               Understanding the Compass
             </h2>
-            <p className="font-ptSans text-white mt-4 leading-relaxed">
+            <p className="font-ptSans text-[19px] text-white mt-4 leading-relaxed">
             <span className="font-bold">The Self-Care Compass</span> is intended to help guide a start place for your value-based self-care journey with clarity and purpose. It’s easy to feel overwhelmed by the many areas of life that demand your attention, but knowing where to begin is often the hardest part. The LDPN tool simplifies this process by providing a focused and actionable starting point within the nine life domains.</p>
 
-            {/* CTA Link */}
+            {/* CTA Link 
             <div className="mt-6">
               <a href="/philosophy" className="inline-flex items-center text-sand-200 font-bold hover:text-sand-100 transition duration-300">
                 <span className="mr-2">→</span> Visit Self-Care Compass blog for more info
               </a>
-            </div>
+            </div>*/}
           </div>
 
           {/* Right Image */}
@@ -107,16 +102,13 @@ export default function SelfCareCompass() {
           <h2 className="font-andika text-xl md:text-2xl font-bold text-stone-950 text-center">
             Beginning with YOU
           </h2>
-          <p className="font-ptSans text-stone-700 text-center max-w-3xl mx-auto mt-4">
-            ...
-          </p>
 
           {/* Clarity Through Focus */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
             <img src="/ldpn-clarity.png" alt="Compass representing values" className="w-full rounded-lg shadow-lg" />
             <div>
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Clarity Through Focus</h3>
-              <p className="font-ptSans text-stone-700 mt-2">
+              <p className="font-ptSans text-[17px] text-stone-700 mt-2">
               Life is full of competing priorities, making it difficult to decide where to direct your energy. The Self-Care Compass helps cut through the noise by pinpointing the life domain most in need of attention. This clarity allows you to focus on the area that will have the greatest impact on your overall well-being. </p>
             </div>
           </div>
@@ -127,9 +119,9 @@ export default function SelfCareCompass() {
             {/* Text Content Section - Moves Left on Desktop */}
             <div className="order-2 md:order-1 text-left md:text-right md:pl-8">
               <h3 className="font-andika text-lg md:text-xl font-bold text-rose-900">A Target Starting Point</h3>
-              <p className="font-ptSans text-stone-700 mt-2">
+              <p className="font-ptSans text-[17px] text-stone-700 mt-2">
               Using a structured scoring system, the Self-Care Compass evaluates the alignment between your current values and the domains in your life—such as relationships, career, health, or spirituality. It highlights the life domain at the highest risk or in the most misalignment, offering a clear and actionable starting point for your self-care efforts.</p>
-              <p className="font-ptSans text-stone-700 mt-2">
+              <p className="font-ptSans text-[17px] text-stone-700 mt-2">
               By identifying where to begin, the Self-Care Compass empowers you to take meaningful steps toward improving balance and well-being in your life. It’s the first step to aligning your self-care practices with your evolving values, ensuring that your efforts are intentional, impactful, and rooted in what matters most to you. The Self-Care Compass is calculated using your Values, Negative Impact, and Detection ratings...</p>
             </div>
 
@@ -160,7 +152,7 @@ export default function SelfCareCompass() {
             <p className="font-ptSans text-sand-700 text-lg mt-2">
               Here’s a breakdown of how we model your score.
             </p>
-            <p className="font-ptSans text-stone-700 mt-2">
+            <p className="font-ptSans text-[19px] text-stone-700 mt-2">
             Higher score indicate higher-priority domains that require immediate action, while lower scores suggest less critical domains. The Self-Care Compass helps prioritize efforts to mitigate the most significantly affected domains based on your personal values and their negative impact. It is intended to be used multiple times during The YOU Continuum, as values, beliefs, and needs change over time.
 
 The Self-Care Compass does all the scoring for you and provides immediate results, showing you which zone you are currently in for each life domain!</p>
@@ -170,9 +162,9 @@ The Self-Care Compass does all the scoring for you and provides immediate result
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Value Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-sand-50">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Value</h3>
-              <p className="font-ptSans text-stone-800 mt-2">
+              <p className="font-ptSans text-[15px] text-stone-950 mt-2">
                 Rates the importance of the value you give each life domain, on a scale of 1 to 5, where 1 means 
                 the value is not important (little to no significance to your life) and 5 means it is extremely 
                 important (central to your life).
@@ -180,9 +172,9 @@ The Self-Care Compass does all the scoring for you and provides immediate result
             </div>
 
             {/* Negative Impact Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-sand-100">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Negative Impact</h3>
-              <p className="font-ptSans text-stone-800 mt-2">
+              <p className="font-ptSans text-[15px] text-stone-950 mt-2">
                 Rates the seriousness of the negative impact on each life domain, on a scale of 1 to 5, with 1 
                 representing no impact (little effect or potential for harm or stress) and 5 representing 
                 critical impact.
@@ -190,9 +182,9 @@ The Self-Care Compass does all the scoring for you and provides immediate result
             </div>
 
             {/* Detection Box */}
-            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-white">
+            <div className="border border-sand-300 rounded-lg p-6 text-left shadow-md bg-sand-200">
               <h3 className="font-andika text-lg md:text-xl font-bold text-sand-900">Detection</h3>
-              <p className="font-ptSans text-stone-800 mt-2">
+              <p className="font-ptSans text-[15px] text-stone-950 mt-2">
                 Rates the likelihood that failure or misalignment of your values and life domains will be detected 
                 before it causes harm, on a scale of 1 to 5, where 1 means almost certain (high likelihood of detecting 
                 issues before escalation) and 5 means almost impossible (low likelihood of detection, with no monitoring 
@@ -222,7 +214,7 @@ The Self-Care Compass does all the scoring for you and provides immediate result
             <h2 className="font-andika text-xl md:text-2xl font-bold text-white">
               Start your journey
             </h2>
-            <p className="font-ptSans mt-4 mb-4 leading-relaxed text-stone-300">
+            <p className="font-ptSans mt-4 mb-4 leading-relaxed text-[19px] text-white">
               Which of these domains resonates with you right now? Your path to a balanced, fulfilling life starts by exploring 
               the domains that matter most to you. Dive deeper into your core values to understand which life domain could benefit 
               most from your focus and take the first step toward positive change.

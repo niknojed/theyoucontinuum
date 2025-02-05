@@ -21,7 +21,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative w-full">
+    <div>
       
       {/* Hero Section */}
       <section 
@@ -43,7 +43,7 @@ export default function HomePage() {
               {/* Left Column - Text Content */}
               <div className="max-w-7xl col-span-3">
                 <h1 className="font-andika text-2xl font-bold text-evergreen-950 leading-tight">
-                  Aligning Self-Care with Your Evolving Values 
+                  Self-Care Starts Here
                 </h1>
                 <p className="font-ptSans text-[19px] text-evergreen-950 mt-4">
                   With so many strategies and resources available to improve different areas of life, or life domains—like health, relationships, career, and more—it can be hard to know where to start. Often, people feel stuck because they aren’t sure which area carries the highest risk to their well-being or which is most important to focus on right now.
@@ -114,9 +114,12 @@ export default function HomePage() {
 
           {/* Right Content */}
           <div>
-            <h2 className="font-andika text-xl md:text-2xl font-bold md:font-normal text-white">
-              Understanding The YOU Continuum
+            <h2 className="font-andika text-[34px] font-bold md:font-bold text-white">
+              Welcome to The YOU Continuum
             </h2>
+            <h4 className="font-andika text-[24px] font-normal md:font-base text-white">
+              Aligning self-care with your evolving values
+            </h4>
             <p className="font-ptSans text-[19px] font-normal text-white mt-4 leading-relaxed">
               A continuum represents small, incremental changes, a seamless flow where one point transitions 
               smoothly into the next, creating a cohesive and unified whole. There are no abrupt gaps, only 
