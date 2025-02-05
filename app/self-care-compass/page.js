@@ -23,8 +23,8 @@ export default function SelfCareCompass() {
     <div className="relative w-full">
 
       {/* Hero Section */}
-      <section 
-        className="relative w-full h-screen flex flex-col items-center px-6"
+      <section  
+        className="relative w-full flex flex-col items-center px-6"
       >
         {/* Background Image - Absolute to Fill Entire Section */}
         <div 
@@ -65,13 +65,6 @@ export default function SelfCareCompass() {
           </div>
         </div>
 
-        {/* Scroll Down Arrow */}
-        <button 
-          onClick={scrollToNextSection} 
-          className="hidden md:flex absolute bottom-6 animate-bounce items-center justify-center w-12 h-12 bg-white rounded-full shadow-md hover:bg-gray-200 transition z-10"
-        >
-          <ChevronDown size={28} className="text-rose-800" />
-        </button>
 
       </section>
 

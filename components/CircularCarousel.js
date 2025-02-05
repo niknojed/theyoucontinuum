@@ -147,12 +147,12 @@ export default function CircularCarousel() {
         <div className="absolute w-96 bg-white p-10 rounded-lg shadow-lg text-center">
           <h3 className="font-andika text-xl font-bold text-gray-900">{selectedDomain.label}</h3>
           <p className="font-ptSans text-[16px] text-stone-900 mt-2">{selectedDomain.description}</p>
-          <button 
+          {/*<button 
             onClick={openSheet}
             className="mt-4 px-6 py-2 bg-evergreen-600 text-white rounded-full shadow-md hover:bg-evergreen-700"
           >
             Learn More
-          </button>
+          </button>*/}
 
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function HomePage() {
       
       {/* Hero Section */}
       <section 
-        className="relative w-full h-screen flex flex-col items-center px-6"
+        className="relative w-full flex flex-col items-center px-6"
       >
         {/* Background Image - Absolute to Fill Entire Section */}
         <div 
@@ -83,19 +83,19 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll Down Section with Label */}
+        {/* Scroll Down Section with Label 
         <div className="hidden md:flex flex-col items-center absolute bottom-24 z-10">
-          {/* Read More Text */}
+          {/* Read More Text 
           <p className="text-white text-[14px] mb-1">Learn More</p>
 
-          {/* Scroll Down Arrow */}
+          {/* Scroll Down Arrow 
           <button 
             onClick={scrollToNextSection} 
             className="flex items-center justify-center w-12 h-12 border-2 rounded-full shadow-md transition"
           >
             <ChevronDown size={28} className="text-white" />
           </button>
-        </div>
+        </div> */}
 
       </section>
 

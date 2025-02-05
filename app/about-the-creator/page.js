@@ -92,13 +92,13 @@ export default function AboutCreatorPage() {
             <h2 className="font-andika text-xl md:text-2xl font-bold md:font-normal text-white">
               "What do I truly value?"
             </h2>
-            <p className="font-ptSans text-[17px] font-normal text-white mt-4 leading-relaxed">
+            <p className="font-ptSans text-[17px] font-normal text-white mt-4">
             Here’s the kicker—everything that fueled my success was also quietly draining me. Like most people, I had a mental checklist of what I should do to fix it: scale back work, find the ever-elusive “work-life balance,” prioritize self-care, eat more kale (or maybe less?), and make exercise a regular thing. You know the drill. But when burnout takes over, even the simplest solutions feel insurmountable.
             </p>
-            <p className="font-ptSans text-[17px] text-white mt-4 leading-relaxed">
+            <p className="font-ptSans text-[17px] text-white mt-4">
             So, I hit pause and asked myself some tough questions: “What do I truly value? Is my life aligned with those values? Have my priorities shifted without me even noticing?” Spoiler alert: they had. Life moves fast, and it’s easy to stick to the same routines, even when they no longer serve us. That realization led me to develop The YOU Continuum—a framework to guide my value-based self-care journey.
             </p>
-            <p className="font-ptSans text-[17px] text-white mt-4 leading-relaxed">The YOU Continuum isn’t about achieving perfection; it’s about progress. It’s about making intentional choices, focusing on what truly matters, and sprinkling in some personal grace when things don’t go as planned (because let’s be real—they often don’t). This approach helped me find a balance I thought was impossible—one free from guilt and aligned with my dreams.</p>
+            <p className="font-ptSans text-[17px] text-white mt-4">The YOU Continuum isn’t about achieving perfection; it’s about progress. It’s about making intentional choices, focusing on what truly matters, and sprinkling in some personal grace when things don’t go as planned (because let’s be real—they often don’t). This approach helped me find a balance I thought was impossible—one free from guilt and aligned with my dreams.</p>
 
           </div>
 
@@ -132,10 +132,10 @@ export default function AboutCreatorPage() {
             <h2 className="font-andika text-xl md:text-2xl font-bold md:font-normal text-stone-950">
               Solving my own challenges
             </h2>
-            <p className="font-ptSans text-[17px] font-normal text-stone-900 mt-4 leading-relaxed">
+            <p className="font-ptSans text-[17px] font-normal text-stone-900 mt-4">
               Interestingly, the <strong>Self-Care Compass</strong> was born out of my professional life. In my business work, I often helped companies conduct risk assessments to identify vulnerabilities and prioritize what needed attention. One day, I wondered, “What if I applied this same process to my personal life? Could I create a similar framework to assess and prioritize my self-care needs?” That’s when the idea for the <strong>Self-Care Compass</strong> clicked. It’s essentially a personalized risk matrix for your life.
             </p>
-            <p className="font-ptSans text-[17px] text-stone-900 mt-4 leading-relaxed">
+            <p className="font-ptSans text-[17px] text-stone-900 mt-4">
               The <strong>Self-Care Compass</strong> doesn’t aim to fix everything at once—because, honestly, who has the energy for that? Instead, it helps you find the right starting point so you can focus on one thing at a time and continue on with other areas of your life. By reducing the stress of trying to tackle everything simultaneously, you can take meaningful steps forward with clarity and confidence.
             </p>
             
