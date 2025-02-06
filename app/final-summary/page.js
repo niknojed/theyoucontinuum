@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 // Life Domain Icons
 const domainIcons = {
@@ -20,12 +22,12 @@ export default function SummaryResultsPage() {
   const [priorityResults, setPriorityResults] = useState([]);
   const [email, setEmail] = useState("");
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [pdfUrl, setPdfUrl] = useState(null);
+  const resultsRef = useRef(null); // Ref for PDF generation
   const router = useRouter();
 
   const impactZones = [
     { name: "Healthy Zone", range: [1, 25], description: "You're in a balanced place. Keep reinforcing positive habits to maintain stability." },
-    { name: "Caution Zone", range: [26, 50], description: "Some areas may need attention soon to prevent. Self-care isn’t one-size-fits-all—it’s about finding what works for YOU." },
+    { name: "Caution Zone", range: [26, 50], description: "Some areas may need attention soon to prevent imbalances. Self-care isn’t one-size-fits-all—it’s about finding what works for YOU." },
     { name: "Action Zone", range: [51, 75], description: "An imbalance is present. Adjustments are needed to realign with your well-being." },
     { name: "Urgent Zone", range: [76, 100], description: "There are significant stressors. Consider taking immediate steps to support yourself." },
     { name: "Crisis Zone", range: [101, Infinity], description: "Your well-being is at risk. It's important to seek support and prioritize care." },
@@ -84,11 +86,28 @@ export default function SummaryResultsPage() {
 
       console.log("Email sent successfully!");
       setEmailSubmitted(true);
-
-      // Mock PDF URL (Replace with actual PDF generation)
-      setPdfUrl("/mock-results.pdf");
     } catch (error) {
       console.error("Failed to send email:", error);
+    }
+  };
+
+  // **📄 Function to Generate & Download PDF**
+  const handleDownloadPDF = async () => {
+    const input = resultsRef.current;
+    if (!input) return;
+
+    try {
+      const canvas = await html2canvas(input, { scale: 2 });
+      const imgData = canvas.toDataURL("image/png");
+
+      const pdf = new jsPDF("p", "mm", "a4");
+      const imgWidth = 190; // mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
+      pdf.save("Self-Care-Compass-Results.pdf");
+    } catch (error) {
+      console.error("Error generating PDF:", error);
     }
   };
 
@@ -100,7 +119,7 @@ export default function SummaryResultsPage() {
       </p>
 
       {/* Grid Layout for Top 3 Domains */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+      <div ref={resultsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
         {priorityResults.map((result, index) => (
           <div 
             key={index}
@@ -110,41 +129,13 @@ export default function SummaryResultsPage() {
               "border-rose-500 bg-rose-50"
             }`}
           >
-            {/* Domain Icon */}
             <div className="text-xl">{result.icon}</div>
-
-            {/* Domain Name */}
             <h2 className="font-andika text-[19px] font-semibold text-gray-900 mt-2">{result.name}</h2>
-
-            {/* Priority Score (Leading Metric) */}
-            <p className="font-ptSans mt-2 text-lg font-bold text-stone-950">
-              Priority Score: {result.priorityNumber}
-            </p>
-
-            {/* Secondary Metric - Percentage */}
-            <p className="font-ptSans mt-1 text-[15px] text-gray-700">
-              {result.percentage}% of selected values
-            </p>
-
-            {/* Impact Zone */}
+            <p className="font-ptSans mt-2 text-lg font-bold text-stone-950">Priority Score: {result.priorityNumber}</p>
+            <p className="font-ptSans mt-1 text-[15px] text-gray-700">{result.percentage}% of selected values</p>
             <p className="font-ptSans mt-4 text-md font-bold text-stone-950">{result.impactZone}</p>
             <p className="font-ptSans text-sm text-gray-600">{result.zoneDescription}</p>
-
-            {/* Actionable Tip */}
-            <p className="font-ptSans mt-4 text-xs text-gray-700 italic">
-              ⭐ Small Step: <span className="font-medium">Take 10 minutes today</span> to reflect on how this domain is affecting your well-being.
-            </p>
-
-            {/* Expandable Extra Details Section */}
-            <details className="mt-4">
-              <summary className="cursor-pointer text-evergreen-600 hover:underline text-[16px] font-semibold">
-                Learn more about this area
-              </summary>
-              <p className="mt-2 text-sm text-gray-700">
-                {/* 📝 Replace this with your detailed content */}
-                This is where you will add the extra details for this domain.
-              </p>
-            </details>
+            <p className="font-ptSans mt-4 text-xs text-gray-700 italic">⭐ Small Step: Reflect on how this domain is affecting your well-being.</p>
           </div>
         ))}
       </div>
@@ -152,36 +143,18 @@ export default function SummaryResultsPage() {
       {/* Email Submission & PDF Download Section */}
       <div className="w-full max-w-5xl bg-white shadow-md rounded-lg p-6 mt-8">
         <h3 className="font-ptSans text-[21px] font-semibold text-gray-800 mb-4">Get Your Full Results</h3>
-        <p className="font-ptSans text-stone-700 mb-4">
-          Enter your email address to receive a detailed report with all priority information.
-        </p>
+        <p className="font-ptSans text-stone-700 mb-4">Enter your email address to receive a detailed report.</p>
         {emailSubmitted ? (
-          <>
-            <p className="font-ptSans text-green-600">Thank you! Your results have been sent to {email}.</p>
-            {pdfUrl && (
-              <a 
-                href={pdfUrl} 
-                download 
-                className="font-ptSans mt-4 block text-center bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition"
-              >
-                Download Your PDF
-              </a>
-            )}
-          </>
+          <button 
+            onClick={handleDownloadPDF} 
+            className="font-ptSans mt-4 w-full text-center bg-teal-600 text-white py-2 rounded-md hover:bg-teal-700 transition"
+          >
+            Download Your PDF
+          </button>
         ) : (
           <>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
-              className="font-ptSans w-full px-4 py-2 border rounded-md mb-4"
-            />
-            <button
-              onClick={handleEmailSubmit}
-              className="font-ptSans px-6 py-3 bg-evergreen-400 hover:bg-evergreen-500 active:bg-evergreen-600 text-white text-sm font-medium rounded-[40px] shadow hover:bg-evergreen-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-evergreen-400 focus:ring-offset-2 transition duration-150 ease-in-out">
-              Send My Results
-            </button>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" className="font-ptSans w-full px-4 py-2 border rounded-md mb-4" />
+            <button onClick={handleEmailSubmit} className="font-ptSans px-6 py-3 bg-evergreen-400 text-white text-sm font-medium rounded-[40px] shadow">Send My Results</button>
           </>
         )}
       </div>

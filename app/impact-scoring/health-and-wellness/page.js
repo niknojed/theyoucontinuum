@@ -13,7 +13,7 @@ export default function HealthAndWellnessScoring() {
 
   // State for opening drawers
   const [isNegativeImpactOpen, setNegativeImpactOpen] = useState(false);
-  const [isDetectionOpen, setDetectionOpen] = useState(false);
+  const [isDetectionOpen, setDetectionOpen] = useState(false); 
 
   const impactDescriptions = {
     1: "Low impact; little effect or potential for harm or stress",

@@ -2,12 +2,18 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Drawer from "../../../components/Drawer";
 import Breadcrumb from "../../../components/Breadcrumb"; 
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 export default function CommunityAndContributionScoring() {
   const [impactScore, setImpactScore] = useState(1);
   const [detectionScore, setDetectionScore] = useState(1);
   const router = useRouter();
+
+    // State for opening drawers
+    const [isNegativeImpactOpen, setNegativeImpactOpen] = useState(false);
+    const [isDetectionOpen, setDetectionOpen] = useState(false); 
 
   const impactDescriptions = {
     1: "Low impact; little effect or potential for harm or stress",
@@ -39,7 +45,9 @@ export default function CommunityAndContributionScoring() {
     >
     <div className="w-full">
       <div className="max-w-4xl px-4 mx-auto pt-8">
-        <Breadcrumb />
+         <div className="mb-4 mt-4">
+            <Breadcrumb />
+        </div>
         <span className="mb-2 inline-flex items-center rounded-full bg-sand-700 px-2 py-1 text-xs font-medium text-white">
           Impact Scoring
         </span>
@@ -48,9 +56,18 @@ export default function CommunityAndContributionScoring() {
         {/* Impact Slider */}
         <div className="pb-6 mb-6 max-w-2xl">
           <h2 className="font-ptSans text-[21px] font-semibold text-white mb-4">Negative Impact</h2>
-          <p className="font-ptSans text-white mb-4">
+          <p className="font-ptSans text-white mb-1">
             Consider the negative impact you are experiencing in this domain. Use the sliding scale to identify the severity of the impact.
           </p>
+
+          {/* "See Example" link for Negative Impact */}
+          <button
+            onClick={() => setNegativeImpactOpen(true)}
+            className="flex items-center text-[15px] text-sand-300 pb-8 hover:text-sand-500"
+          >
+            <EyeIcon className="w-4 h-4 mr-1" /> See an example
+          </button>
+
           <input
             type="range"
             min="1"
@@ -73,9 +90,18 @@ export default function CommunityAndContributionScoring() {
         {/* Detection Slider */}
         <div className="pb-8 pt-8 max-w-2xl">
           <h2 className="font-ptSans text-[21px] font-semibold text-white mb-4">Detection</h2>
-          <p className="font-ptSans text-white mb-4">
+          <p className="font-ptSans text-white mb-1">
             Consider the detection systems and preventative measures you have implemented in this domain. Use the sliding scale to identify the likelihood of detection.
           </p>
+
+          {/* "See Example" link for Detection */}
+                    <button
+                      onClick={() => setDetectionOpen(true)}
+                      className="flex items-center text-[15px] text-sand-300 pb-8 hover:text-sand-500"
+                    >
+                      <EyeIcon className="w-4 h-4 mr-1" /> See an example
+                    </button>
+
           <input
             type="range"
             min="1"
@@ -96,6 +122,29 @@ export default function CommunityAndContributionScoring() {
       </button>
       </div>
     </div>
+
+    {/* Drawer Components */}
+          <Drawer
+            title="Negative Impact Example"
+            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
+            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
+            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+    ]}
+            imageUrl="/tired.svg" // Optional: Include an image if needed
+            open={isNegativeImpactOpen}
+            setOpen={setNegativeImpactOpen}
+          />
+    
+          <Drawer
+            title="Detection Example"
+            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
+              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
+              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+      ]}  
+            imageUrl="/crying.svg" // Optional: Include an image if needed
+            open={isDetectionOpen}
+            setOpen={setDetectionOpen}
+          />
     </section>
   );
 }
