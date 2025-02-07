@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { HomeIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,9 +98,15 @@ export default function Navbar() {
 // === SELF-CARE COMPASS NAVIGATION BAR ===
 const SelfCareCompassNavbar = () => (
   <nav className="fixed top-0 left-0 right-0 bg-stone-950 text-white py-4 px-6 md:px-12 flex items-center justify-between shadow-lg z-50">
+    {/* Logo on the Left */}
     <div className="flex items-center">
       <Image src="/self-care-compass-logo.svg" width={292} height={50} alt="Self-Care Compass" />
     </div>
+
+    {/* Link to Home Page on the Right */}
+    <a href="/" className="text-white text-[17px] md:text-[17px] font-medium hover:underline ml-auto pl-4">
+      <HomeIcon className="w-7 h-7 text-white hover:text-stone-400" />
+    </a>
   </nav>
 );
 
