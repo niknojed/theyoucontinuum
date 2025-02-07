@@ -6,7 +6,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from 'next/image';
 import gsap from "gsap";
 
-export default function Drawer({ title, content, imageUrl, open, setOpen }) {
+export default function Drawer({ title, content, imageUrl, open, setOpen, isImpactZoneView }) {
   const drawerRef = useRef(null);
   const overlayRef = useRef(null);
   const contentRef = useRef(null);
@@ -84,12 +84,34 @@ export default function Drawer({ title, content, imageUrl, open, setOpen }) {
                   </div>
                 )}
 
-                {/* Ensure content is an array before mapping */}
-                {(Array.isArray(content) ? content : [content]).map((paragraph, index) => (
-                  <p key={index} className="text-stone-700 leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
+                {/* Render Impact Zone Comparison View */}
+                {isImpactZoneView ? (
+                <div className="space-y-6">
+                  {Array.isArray(content) &&
+                    content.map((zone, index) => (
+                      <div key={index} className="bg-stone-100 p-4 rounded-lg">
+                        {/* Ensure <h3> is outside of <p> */}
+                        <h3 className="font-semibold text-[lg] text-stone-900">{zone.name}</h3>
+                        <p className="text-sm text-stone-700">
+                          <strong>Definition:</strong> {zone.description}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                /* Default content rendering */
+                (Array.isArray(content) ? content : [content]).map((paragraph, index) => (
+                  typeof paragraph === "string" ? (
+                    <p key={index} className="text-stone-700 leading-relaxed">
+                      {paragraph} {/* ✅ Render normally if it's just text */}
+                    </p>
+                  ) : (
+                    <div key={index}> 
+                      {paragraph} {/* ✅ Render JSX directly if it's not a string */}
+                    </div>
+                  )
+                ))
+              )}
               </div>
 
             </DialogPanel>

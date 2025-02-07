@@ -138,22 +138,22 @@ export default function CareerAndAmbitionsScoring() {
       {/* Drawer Components */}
             <Drawer
               title="Negative Impact Example"
-              content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-              "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+              content={["You struggle with procrastination and feel overwhelmed by your workload, making it challenging to meet deadlines. Additionally, you notice a lack of engagement in tasks that once motivated you, a disconnect from colleagues or the value you are providing to your team.",
+              "• Minor impact could be if you are someone who occasionally procrastinates on work projects but has effective time management techniques, such as maintaining a to-do list or using productivity tools. While you may occasionally feel overwhelmed, it does not affect your overall performance, and you take steps to regain focus when needed.",
+              "• Critical impact could be if you are someone experiencing chronic burnout, consistently missing deadlines, and neglecting professional development. You might also feel stuck in your role, experiencing a misalignment with your career goals, leading to frustration, disengagement, and negative spillover effects in other life domains, such as relationships or mental well-being."
       ]}
-              imageUrl="/tired.svg" // Optional: Include an image if needed
+              imageUrl="/overworked-male.svg" // Optional: Include an image if needed
               open={isNegativeImpactOpen}
               setOpen={setNegativeImpactOpen}
             />
       
             <Drawer
               title="Detection Example"
-              content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-                "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-                "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+              content={["You struggle with procrastination and feel overwhelmed by your workload, making it challenging to meet deadlines. Additionally, you notice a lack of engagement in tasks that once motivated you, a disconnect from colleagues or the value you are providing to your team.",
+                "• Low likelihood of detection could be if you are someone who does not regularly reflect on your career satisfaction or performance, rarely seeks feedback from peers or mentors, and avoids setting long-term career goals. This makes it difficult to recognize when you are off track until the consequences are severe.",
+                "• Very high likelihood of detection could be if you are someone who regularly evaluates your workload and priorities, sets and reviews short- and long-term career objectives, seeks feedback to align with growth opportunities, and uses strategies like journaling or career coaching to identify signs of burnout or dissatisfaction early. This ensures that you can take corrective action promptly."
         ]}  
-              imageUrl="/crying.svg" // Optional: Include an image if needed
+              imageUrl="/overworked-female.svg" // Optional: Include an image if needed
               open={isDetectionOpen}
               setOpen={setDetectionOpen}
             />

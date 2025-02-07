@@ -2,8 +2,6 @@
 
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { ChevronDown } from "lucide-react"; 
 import CircularCarousel from "../components/CircularCarousel";
 
 export default function HomePage() {
