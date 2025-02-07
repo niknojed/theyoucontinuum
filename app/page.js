@@ -130,12 +130,12 @@ export default function HomePage() {
               current values, The YOU Continuum provides a clear, actionable starting point for meaningful self-care.
             </p>
 
-            {/* CTA Link */}
+            {/* CTA Link 
             <div className="mt-6">
               <a href="/philosophy" className="inline-flex items-center text-sand-300 underline underline-offset-4 hover:text-sand-100 transition duration-300">
                 Learn about the YOU Continuum philosophy
               </a>
-            </div>
+            </div>*/}
           </div>
 
         </div>

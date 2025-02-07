@@ -308,32 +308,56 @@ const handleEmailSubmit = async () => {
   console.log("Current Email Value:", email); // Debugging
 
   if (!email) {
-      console.error("❌ Email is required but missing.");
-      return;
+    console.error("❌ Email is required but missing.");
+    return;
   }
 
-  const dataToSend = { email, results: priorityResults };
+  const smtpData = {
+    to: email,
+    subject: "Your Self-Care Compass Results + The YOU Continuum Community",
+    body: `
+      <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px;">
+        <h2 style="color: #2c3e50;">Your Self-Care Compass Results</h2>
+        <p>Thank you for your interest in The YOU Continuum! By now, you've received the results of your Self-Care Compass—your personal guide to identifying the life domain that needs your attention most right now.</p>
+        <p>Your self-care journey starts here. But remember, life is an evolution. Your values shift, your needs change, and self-care isn’t a one-time fix—it’s an ongoing, dynamic process.</p>
+        <p><strong>You are now part of a growing community focused on intentional, value-based self-care.</strong></p>
+        <ul>
+          <li>✅ <span style="color: #2E7562;">Blog updates exploring the intersections of values, self-care, and personal growth</span></li>
+          <li>✅ <span style="color: #2E7562;">Exclusive resources to help you deepen your self-awareness and well-being</span></li>
+          <li>✅ <span style="color: #2E7562;">Updates on the evolution of The YOU Continuum</span></li>
+        </ul>
+        <p>We’d also love to hear from you! There will be opportunities to provide feedback on tools and future iterations on The YOU Continuum, shaping this journey for yourself and others. Stay tuned for ways to get involved.</p>
+        <p><strong>For now, take a moment to reflect on your Self-Care Compass results.</strong> What's one small step you can take today to align your actions with your values?</p>
+        <p>We’re excited to be part of your journey. More to come soon!</p>
+        <p><strong>Rachel Anderson & Team</strong></p>
+      </div>
+    `,
+  };
 
   try {
-      console.log("📨 Sending request to API:", dataToSend);
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": "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", // Replace with your Brevo API Key
+      },
+      body: JSON.stringify({
+        sender: { name: "Self-Care Compass", email: "info@youcontinuum.com" },
+        to: [{ email: smtpData.to }],
+        subject: smtpData.subject,
+        htmlContent: smtpData.body,
+      }),
+    });
 
-      const response = await fetch("/api/send-results", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(dataToSend),
-      });
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      throw new Error(`Failed to send email: ${response.status} - ${errorMessage}`);
+    }
 
-      console.log("API Response Status:", response.status);
-
-      if (!response.ok) {
-          const errorMessage = await response.text();
-          throw new Error(`Failed to send email: ${response.status} - ${errorMessage}`);
-      }
-
-      console.log("✅ Email sent successfully!");
-      setEmailSubmitted(true);
+    console.log("✅ Email sent successfully!");
+    setEmailSubmitted(true);
   } catch (error) {
-      console.error("❌ Failed to send email:", error);
+    console.error("❌ Failed to send email:", error);
   }
 };
 

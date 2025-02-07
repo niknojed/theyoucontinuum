@@ -139,22 +139,22 @@ export default function SpiritualityAndBeliefsScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You feel disconnected from your spiritual or belief practices, leading to a sense of emptiness, confusion, or lack of purpose. You struggle with questions about meaning or direction in life but avoid exploring them, leaving you feeling unanchored or adrift.",
+            "• Minor impact could be if you occasionally skip the religious service you’ve regularly attended for years, but still engage in practices that help you connect or reconnect, such as meditation or prayer. These temporary challenges do not disrupt your overall sense of purpose or alignment and can easily be redirected back on the right path.",
+            "• Critical impact could be if you completely disengage from your spiritual community, avoiding questions of purpose and feeling disillusionment with your beliefs, which is atypical for you. Internal conflicts arise, while feeling a profound sense of loss, existential distress, or difficulty finding motivation, potentially affecting other domains like mental well-being, community engagement or relationships."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/meditation-beliefs.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You feel disconnected from your spiritual or belief practices, leading to a sense of emptiness, confusion, or lack of purpose. You struggle with questions about meaning or direction in life but avoid exploring them, leaving you feeling unanchored or adrift.",
+              "• Low likelihood of detection could be if you are someone who rarely reflects on your spirituality, avoids engaging in practices that foster connection, and isolates yourself from communities or resources that could provide guidance. Without these checks, it may be challenging to notice when disconnection is taking a toll on your sense of purpose and other life domains.",
+              "• Very high likelihood of detection could be if you are someone who regularly engages in spiritual practices, such as meditation, worship, or reflection, and participates in a supportive community or seeks guidance when needed. You might also routinely evaluate your sense of alignment with your beliefs, making it easier to identify and address periods of disconnection before they escalate."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/meditation-beliefs-1.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

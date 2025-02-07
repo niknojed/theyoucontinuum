@@ -126,22 +126,22 @@ export default function CommunityAndContributionScoring() {
     {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You feel detached from your community or struggle to find meaningful ways to contribute, leading to feelings of isolation or a lack of purpose. You notice a reluctance to engage in volunteer work, civic duties, or social events, leaving you feeling disconnected from those around you and your ability to make a difference.",
+            "• Minor impact could be if you occasionally feel less involved in your community but still find small ways to volunteer at your local Food Pantry, perhaps just less frequently. While you may feel a temporary lapse in connection, it does not affect your overall sense of belonging or purpose.",
+            "• Critical impact could be if you completely withdraw from your volunteerism and feel apathetic toward contributing to others' well-being, and this is atypical for you. This could lead to feelings of loneliness, insignificance, and a lack of fulfillment, potentially impacting other life domains like relationships, environment, recreation, or overall well-being."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/disconnected.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You feel detached from your community or struggle to find meaningful ways to contribute, leading to feelings of isolation or a lack of purpose. You notice a reluctance to engage in volunteer work, civic duties, or social events, leaving you feeling disconnected from those around you and your ability to make a difference.",
+              "• Low likelihood of detection could be if you are someone who does not reflect on your level of community involvement or dismisses opportunities to engage with others. You might not monitor your sense of belonging or contribution, making it harder to recognize disconnection before it becomes a significant issue.",
+              "• Very high likelihood of detection could be if you are someone who regularly assesses your engagement in the community, participates in activities that align with your values, and seeks out opportunities to contribute meaningfully. You might also maintain connections with local organizations, neighbors, attend events, or volunteer regularly, ensuring you quickly notice when your level of involvement is waning and take action to reconnect."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/alone-comm.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

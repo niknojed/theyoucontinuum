@@ -139,22 +139,22 @@ export default function FinancesScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You struggle with managing your budget, often overspending or forgetting to track expenses, which leads to financial stress. Additionally, you lack savings and/or have mounting debt, creating anxiety about future stability and limiting your ability to achieve financial goals.",
+            "• Minor impact could be if you occasionally go over budget or miss financial goals but take steps to course-correct, such as adjusting your spending or saving habits. While financial stress may arise, it does not significantly disrupt your ability to meet basic needs or achieve long-term financial goals like education and advancement in employment resulting in increased income.",
+            "• Critical impact could be if you consistently live paycheck to paycheck, accumulate unmanageable debt, or neglect critical financial planning, such as saving for emergencies, medical costs, or retirement. This could lead to chronic stress, strained relationships due to financial disagreements, or inability to address unexpected expenses, affecting other life domains like well-being, career and education, or environment and home life."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/finance-debt.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You struggle with managing your budget, often overspending or forgetting to track expenses, which leads to financial stress. Additionally, you lack savings and/or have mounting debt, creating anxiety about future stability and limiting your ability to achieve financial goals.",
+              "• Low likelihood of detection could be if you are someone who rarely reviews financial statements, avoids budgeting, is unclear on your net worth or income, and does not track spending or debt levels. Without clear visibility into your finances, it becomes difficult to identify problems before they escalate.",
+              "• Very high likelihood of detection could be if you are someone who regularly monitors your budget, reviews monthly statements, tracks expenses, and sets clear financial goals. You might also use financial planning tools, consult with a financial advisor, or maintain an emergency fund, ensuring that you can quickly detect and address financial issues before they worsen."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/debt.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

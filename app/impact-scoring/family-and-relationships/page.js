@@ -139,22 +139,22 @@ export default function FamilyAndRelationshipsScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You feel disconnected from family members or close relationships due to a lack of communication or unresolved conflicts. Additionally, you notice that quality time with loved ones is being replaced by distractions, such as work or technology, which is causing you feelings of isolation and/or resentment.",
+            "• Minor impact could be if you occasionally experience tension or distance in the relationship with your partner but actively address it through open communication or by prioritizing time together. While conflicts or misunderstandings may arise, they are resolved without causing lasting damage to the relationship.",
+            "• Critical impact could be if you avoid addressing recurring conflicts or disengage from your partner entirely, leading to prolonged periods of silence, mistrust, or estrangement. This could escalate to feelings of loneliness, emotional exhaustion, or strained dynamics, impacting other domains such as mental well-being or your belief system."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/family.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You feel disconnected from family members or close relationships due to a lack of communication or unresolved conflicts. Additionally, you notice that quality time with loved ones is being replaced by distractions, such as work or technology, which is causing you feelings of isolation and/or resentment.",
+              "• Low likelihood of detection could be if you are someone who rarely reflects on the health of your relationships or fails to notice when distance or tension is growing. You may avoid difficult conversations and assume issues will resolve themselves or the other person will make the effort to communicate, making it harder to recognize problems until relationships are significantly strained.",
+              "• Very high likelihood of detection could be if you are someone who regularly communicates openly with loved ones, schedules consistent quality time together, and reflects on the state of your relationships. You might also use strategies like family meetings, relationship check-ins/ audits, or therapy to identify potential issues early and address them constructively, ensuring that relationships remain strong and fulfilling."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/loved-ones.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

@@ -138,22 +138,22 @@ export default function PersonalGrowthAndEducationScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You lack the motivation to learn new skills or pursue personal development goals, which limits your ability to adapt to change or seize opportunities. Additionally, you struggle with focus when attempting to engage in self-improvement activities, such as reading or attending workshops, which leads you to feel mental fatigue and low self-confidence.",
+            "• Minor impact could be if you are someone who occasionally feels unmotivated to explore self-improvement methods but still takes steps to learn and grow. While you may face occasional setbacks, you remain proactive in pursuing your goals without significant disruption.",
+            "• Critical impact could be if you are someone who avoids self-improvement entirely, neglecting opportunities to grow due to fear of failure or a belief that growth is unnecessary. This can lead to stagnation, a loss of confidence, and feeling unprepared for personal or professional challenges, potentially affecting other domains like career and relationships."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/unmotivated.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You lack the motivation to learn new skills or pursue personal development goals, which limits your ability to adapt to change or seize opportunities. Additionally, you struggle with focus when attempting to engage in self-improvement activities, such as reading or attending workshops, which leads you to feel mental fatigue and low self-confidence.",
+              "• Low likelihood of detection could be if you are someone who does not track your personal growth progress or reflect on areas where you can improve. You may not seek feedback or monitor how your lack of engagement in education affects your ability to achieve long-term goals, making it challenging to recognize stagnation early.",
+              "• Very high likelihood of detection could be if you are someone who sets measurable personal development goals, regularly reflects on achievements and areas for improvement, and actively seeks out learning opportunities like traveling, workshops, and reading. You might also use strategies such as journaling, creating an education plan, or seeking mentorship, ensuring you quickly notice when you're not making progress and take action to course-correct."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/goals.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

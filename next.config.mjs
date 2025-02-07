@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true, // Ensures React runs in strict mode for better error detection
-    output: "export", // Enables static export mode
-  distDir: "out", // Default directory for exported files
-  images: { unoptimized: true } // Disables image optimization (needed for static export)
-  };
-  
-  export default nextConfig;
+  reactStrictMode: true, // ✅ Helps with debugging
+  output: "export", // ✅ Static export since you’re using Brevo from frontend
+  distDir: "out", // ✅ Ensures everything is built inside /out
+  images: { unoptimized: true }, // ✅ Disables Next.js image optimization for static hosting
+};
+
+export default nextConfig;

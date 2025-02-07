@@ -139,22 +139,22 @@ export default function RecreationAndLeisureScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You find yourself rarely engaging in recreational activities or hobbies, leading to feelings of boredom, lack of fulfillment, or enjoyment. When you do have free time, you struggle to relax or feel guilty about prioritizing yourself, which affects your ability to recharge and enjoy life.",
+            "• Minor impact could be if you occasionally skip recreational activities, like hikes or crafting with friends, due to a busy schedule but still make time for hobbies or relaxation when possible. While you may feel slightly out of balance at times, it does not significantly affect your overall mood or well-being.",
+            "• Critical impact could be if you completely neglect recreation and leisure, spending all your time on work, taking care of others or other responsibilities without making time for fun or relaxation. This could lead to burnout, decreased creativity, and feelings of dissatisfaction, and misalignment of one’s self, which might spill over into other domains like relationships or mental health."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/friends.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You find yourself rarely engaging in recreational activities or hobbies, leading to feelings of boredom, lack of fulfillment, or enjoyment. When you do have free time, you struggle to relax or feel guilty about prioritizing yourself, which affects your ability to recharge and enjoy life.",
+              "• Low likelihood of detection could be if you are someone who rarely reflects on your need for recreation and leisure or does not schedule any time for these activities. You may not even know what activities or hobbies make you thrive. Without recognizing the importance of relaxation and fun, it may be difficult to notice when a lack of leisure is contributing to stress or dissatisfaction.",
+              "• Very high likelihood of detection could be if you are someone who actively prioritizes leisure by scheduling hobbies, planning vacations, or making time for activities that bring joy. You might also regularly check in with yourself to ensure you are maintaining a healthy balance between work, responsibilities, taking care of others and recreation, allowing you to quickly identify when leisure is being neglected."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/vacation.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />

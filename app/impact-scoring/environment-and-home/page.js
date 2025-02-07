@@ -138,22 +138,22 @@ export default function EnvironmentAndHomeScoring() {
           {/* Drawer Components */}
           <Drawer
             title="Negative Impact Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-            "• Minor impact could be if you are someone who is at risk for Type II diabetes and are actively tracking blood sugar and weight, which can be an annoyance, but does not limit your day-to-day functioning.You also practice ongoing mindfulness to pay close attention to any effects on your mental health.",
-            "• Critical impact could be if you are someone who is diabetic but you do not manage blood sugar or diet. Insulin is an afterthought and your body is having severe reactions, which is causing harm in other domains as well. Additionally, fatigue and other symptoms could be attributed to depression from isolation, feelings of loss and more, while also affecting other domains like finances, relationships, and community involvement."
+            content={["You feel unsettled in your home environment, due to clutter, disorganization, and a lack of personal comfort. You notice that your surroundings do not reflect your needs or goals, which contributes to stress, discomfort, or difficulty relaxing in your space.",
+            "• Minor impact could be if your home occasionally becomes cluttered or less organized during busy times, but you take steps to restore order, such as tidying up or rearranging your space. While it may cause temporary inconvenience, it does not interfere with your overall ability to feel comfortable or relaxed at home.",
+            "• Critical impact could be if your environment is consistently chaotic, unsafe, or poorly maintained, leaving you feeling overwhelmed or unable to focus. This could result in a lack of rest, security, productivity, or emotional well-being and might also affect other domains, such as relationships, finances, community engagement, or mental health."
     ]}
-            imageUrl="/tired.svg" // Optional: Include an image if needed
+            imageUrl="/clutter.svg" // Optional: Include an image if needed
             open={isNegativeImpactOpen}
             setOpen={setNegativeImpactOpen}
           />
     
           <Drawer
             title="Detection Example"
-            content={["You experience fatigue throughout the day, making focusing a challenge, particularly low energy levels after meals indicating potential dietary issues, such as low blood sugar or poor nutrition.",
-              "• Low likelihood of detection could be if you are someone who does not visit the doctor or monitor any level of their physical or mental health, making it challenging to know when there is an issue.",
-              "• Very high likelihood of detection could be if you are someone who tracks your weight, regularly checks in with your primary care physician and/or therapist, participates in regular exercise, monitors eating habits, and uses strong mental health coping mechanisms, making it almost certain to recognize issues immediately."
+            content={["You feel unsettled in your home environment, due to clutter, disorganization, and a lack of personal comfort. You notice that your surroundings do not reflect your needs or goals, which contributes to stress, discomfort, or difficulty relaxing in your space.",
+              "• Low likelihood of detection could be if you are someone who rarely evaluates your living space, ignores signs of disorganization, or avoids addressing issues like necessary repairs or cleaning. Without regular attention, problems in your environment may escalate without being noticed.",
+              "• Very high likelihood of detection could be if you are someone who regularly evaluates and maintains your home environment, follows consistent strategies to keep it clean, organized, and reflective of your personal values. You may have measurable goals in place to move and improve your neighborhood. You might also use tools like cleaning and home maintenance schedules, home improvement plans, or regular decluttering, ensuring you quickly detect and resolve potential issues in your space before they escalate and spill over into other life domains such as finances, community engagement, relationships, and overall well-being."
       ]}  
-            imageUrl="/crying.svg" // Optional: Include an image if needed
+            imageUrl="/disorganized.svg" // Optional: Include an image if needed
             open={isDetectionOpen}
             setOpen={setDetectionOpen}
           />
