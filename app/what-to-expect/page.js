@@ -26,7 +26,7 @@ export default function WhatToExpect() {
         
         {/* Intro Text */}
         <p className="font-ptSans text-white mt-4">
-          The Self-Care Compass will guide you through five values-related questions. The amount of time it takes to complete, from X to X minutes, is different for everyone.
+          The Self-Care Compass will guide you through five values-related questions. The amount of time it takes to complete is about 10 minutes, but can be different for everyone.
         </p>
         <p className="font-ptSans text-white mt-4">
           Selecting a value does not mean you are perfectly living up to it or even prioritizing it. It just means that in an ideal world, with ample time and energy, these values are the most important to you.
