@@ -312,52 +312,164 @@ const handleEmailSubmit = async () => {
     return;
   }
 
-  const smtpData = {
-    to: email,
-    subject: "Your Self-Care Compass Results + The YOU Continuum Community",
-    body: `
-      <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px;">
-        <h2 style="color: #2c3e50;">Your Self-Care Compass Results</h2>
-        <p>Thank you for your interest in The YOU Continuum! By now, you've received the results of your Self-Care Compass—your personal guide to identifying the life domain that needs your attention most right now.</p>
-        <p>Your self-care journey starts here. But remember, life is an evolution. Your values shift, your needs change, and self-care isn’t a one-time fix—it’s an ongoing, dynamic process.</p>
-        <p><strong>You are now part of a growing community focused on intentional, value-based self-care.</strong></p>
-        <ul>
-          <li>✅ <span style="color: #2E7562;">Blog updates exploring the intersections of values, self-care, and personal growth</span></li>
-          <li>✅ <span style="color: #2E7562;">Exclusive resources to help you deepen your self-awareness and well-being</span></li>
-          <li>✅ <span style="color: #2E7562;">Updates on the evolution of The YOU Continuum</span></li>
-        </ul>
-        <p>We’d also love to hear from you! There will be opportunities to provide feedback on tools and future iterations on The YOU Continuum, shaping this journey for yourself and others. Stay tuned for ways to get involved.</p>
-        <p><strong>For now, take a moment to reflect on your Self-Care Compass results.</strong> What's one small step you can take today to align your actions with your values?</p>
-        <p>We’re excited to be part of your journey. More to come soon!</p>
-        <p><strong>Rachel Anderson & Team</strong></p>
-      </div>
-    `,
-  };
-
   try {
-    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": "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", // Replace with your Brevo API Key
-      },
-      body: JSON.stringify({
-        sender: { name: "Self-Care Compass", email: "info@youcontinuum.com" },
-        to: [{ email: smtpData.to }],
-        subject: smtpData.subject,
-        htmlContent: smtpData.body,
-      }),
+    // **Generate PDF in memory**
+    const pdf = new jsPDF("p", "mm", "a4");
+    const margin = 10;
+    let yPosition = 20;
+    const pageHeight = 280;
+
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(20);
+    pdf.text("Self-Care Compass Results", margin, yPosition);
+    yPosition += 10;
+
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(12);
+    pdf.text("Explore your prioritized domains, their impact, and improvement tips.", margin, yPosition);
+    yPosition += 10;
+
+    priorityResults.forEach((result) => {
+      if (yPosition > pageHeight) {
+        pdf.addPage();
+        yPosition = 20;
+      }
+
+      const impactZone = impactZones.find(zone => zone.name === result.impactZone);
+
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(16);
+      pdf.text(result.name, margin, yPosition);
+      yPosition += 8;
+
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(11);
+      const descriptionLines = pdf.splitTextToSize(result.description, 180);
+      pdf.text(descriptionLines, margin, yPosition);
+      yPosition += descriptionLines.length * 5 + 3;
+
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(13);
+      pdf.text(`Impact Zone: ${impactZone ? impactZone.name : "Unknown Zone"}`, margin, yPosition);
+      yPosition += 5;
+
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(11);
+
+      if (impactZone?.definition) {
+        const definitionLines = pdf.splitTextToSize(`Definition: ${impactZone.definition}`, 180);
+        pdf.text(definitionLines, margin, yPosition);
+        yPosition += definitionLines.length * 5;
+      }
+
+      if (impactZone?.explanation) {
+        const explanationLines = pdf.splitTextToSize(`Explanation: ${impactZone.explanation}`, 180);
+        pdf.text(explanationLines, margin, yPosition);
+        yPosition += explanationLines.length * 5 + 5;
+      }
+
+      yPosition += 7;
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(13);
+      pdf.text("Tips for Improvement:", margin, yPosition);
+      yPosition += 7;
+
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(10);
+
+      result.priorityTip.forEach((tip) => {
+        if (yPosition > pageHeight) {
+          pdf.addPage();
+          yPosition = 20;
+        }
+        const bulletLines = pdf.splitTextToSize(`- ${tip}`, 180);
+        pdf.text(bulletLines, margin, yPosition);
+        yPosition += bulletLines.length * 5;
+      });
+
+      yPosition += 5;
+      pdf.setDrawColor(150);
+      pdf.setLineWidth(0.5);
+      pdf.line(margin, yPosition, 200, yPosition);
+      yPosition += 10;
+
+      if (yPosition > pageHeight) {
+        pdf.addPage();
+        yPosition = 20;
+      }
     });
 
-    if (!response.ok) {
-      const errorMessage = await response.text();
-      throw new Error(`Failed to send email: ${response.status} - ${errorMessage}`);
-    }
+    // Convert the PDF to a Blob and then to Base64 for email attachment
+    const pdfBlob = pdf.output("blob");
+    const reader = new FileReader();
+    reader.readAsDataURL(pdfBlob);
+    reader.onloadend = async () => {
+      const base64PDF = reader.result.split(",")[1]; // Extract base64 data
 
-    console.log("✅ Email sent successfully!");
-    setEmailSubmitted(true);
+      // **Prepare Email Data**
+      const smtpData = {
+        to: email,
+        subject: "Your Self-Care Compass Results + The YOU Continuum Community",
+        body: `
+          <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px;">
+            <h2 style="color: #2c3e50;">Your Self-Care Compass Results</h2>
+            <p>Thank you for your interest in The YOU Continuum! By now, you've received the results of your Self-Care Compass—your personal guide to identifying the life domain that needs your attention most right now.</p>
+            <p>Your self-care journey starts here. But remember, life is an evolution. Your values shift, your needs change, and self-care isn’t a one-time fix—it’s an ongoing, dynamic process.</p>
+            <p><strong>You are now part of a growing community focused on intentional, value-based self-care.</strong></p>
+            <ul>
+              <li>✅ <span style="color: #2E7562;">Blog updates exploring the intersections of values, self-care, and personal growth</span></li>
+              <li>✅ <span style="color: #2E7562;">Exclusive resources to help you deepen your self-awareness and well-being</span></li>
+              <li>✅ <span style="color: #2E7562;">Updates on the evolution of The YOU Continuum</span></li>
+            </ul>
+            <p>We’d also love to hear from you! There will be opportunities to provide feedback on tools and future iterations on The YOU Continuum, shaping this journey for yourself and others. Stay tuned for ways to get involved.</p>
+            <p><strong>For now, take a moment to reflect on your Self-Care Compass results.</strong> What's one small step you can take today to align your actions with your values?</p>
+            <p>We’re excited to be part of your journey. More to come soon!</p>
+            <p><strong>Rachel Anderson & Team</strong></p>
+          </div>
+        `,
+        attachment: {
+          name: "Self-Care-Compass-Results.pdf",
+          content: base64PDF,
+          type: "application/pdf",
+        },
+      };
+
+      // **Send Email via Brevo**
+      try {
+        const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "api-key": "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", // Replace with your Brevo API Key
+          },
+          body: JSON.stringify({
+            sender: { name: "Self-Care Compass", email: "info@youcontinuum.com" },
+            to: [{ email: smtpData.to }],
+            subject: smtpData.subject,
+            htmlContent: smtpData.body,
+            attachment: [
+              {
+                name: smtpData.attachment.name,
+                content: smtpData.attachment.content,
+                type: smtpData.attachment.type,
+              },
+            ],
+          }),
+        });
+
+        if (!response.ok) {
+          const errorMessage = await response.text();
+          throw new Error(`Failed to send email: ${response.status} - ${errorMessage}`);
+        }
+
+        console.log("✅ Email sent successfully with PDF attachment!");
+        setEmailSubmitted(true);
+      } catch (error) {
+        console.error("❌ Failed to send email:", error);
+      }
+    };
   } catch (error) {
-    console.error("❌ Failed to send email:", error);
+    console.error("Error generating PDF:", error);
   }
 };
 
