@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 YOU Continuum – Self-Care Compass Platform
 
-## Getting Started
+**YOU Continuum** is a values-based self-care platform helping users identify and prioritize life domains through introspection and impact scoring. This project is built with **Next.js** and integrates a WordPress-powered blog.
 
-First, run the development server:
+---
+
+## 🚀 Project Overview
+
+- **Framework:** Next.js (static export mode)
+- **Deployment:** Hostinger (FTP-based)
+- **Blog:** WordPress installed at `/blog`
+- **PDF Generation:** jsPDF
+- **Styling:** Tailwind CSS
+
+---
+
+## 📁 Directory Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+.
+├── public/              # Static assets (images, logos, icons)
+├── pages/               # All route-based pages (e.g., /philosophy, /results)
+├── components/          # Reusable React components
+├── styles/              # Tailwind and custom styles
+├── constants/           # Value mappings, domain definitions
+├── out/                 # Static output after export (used for deployment)
+├── next.config.js       # Next.js configuration
+├── package.json         # Project dependencies and scripts
+└── .htaccess            # Apache routing rules for SPA/WordPress split
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 PDF Generation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+PDF export is handled with jsPDF. Results from the Final Summary are dynamically inserted into a downloadable report.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⸻
 
-## Learn More
+✅ TODOs
+	•	Add CMS integration for Life Domain content?
+	•	Setup CI/CD pipeline for build & FTP upload
+	•	Improve accessibility and SEO
 
-To learn more about Next.js, take a look at the following resources:
+🧠 Philosophy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project encourages self-awareness by helping users slow down, reflect on their core values, and take aligned action toward holistic well-being.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⸻
 
-## Deploy on Vercel
+👤 Creator
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with love by Kinan Adams, Designer and Developer behind Alldazework.
+For collaboration inquiries, visit design@alldazework.com
